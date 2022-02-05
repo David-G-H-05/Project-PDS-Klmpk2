@@ -1,4 +1,6 @@
+from cgitb import text
 from faulthandler import disable
+from sys import dllhandle
 from tkinter import *
 from tkinter import font
 from tkinter.ttk import Labelframe
@@ -25,10 +27,11 @@ project_name.grid(row=0, column=0)
 
 # Frame
 
+
 menuframe = Frame(a, bd=10, relief=RIDGE, bg='firebrick4') #bisa menambahkan warna background  (bg)
 menuframe.pack(side=LEFT)
 
-hargaframe = Frame(menuframe, bd=4, relief=RIDGE)
+hargaframe = Frame(menuframe, bd=4, relief=RIDGE, bg='firebrick4', pady=10) #bisa menambahkan warna background  (bg)
 hargaframe.pack(side=BOTTOM)
 
 makanan_frame = LabelFrame(menuframe, text='MAKANAN', font=('Times New Roman', 19, 'bold'), bd=10, relief=RIDGE, fg='black')
@@ -125,45 +128,54 @@ root_cheese = StringVar()
 root_mocha = StringVar()
 
 
-# Pengisian Jumlah pada Kolom dafatr makanan,minuman & cake
+# Pengisian Jumlah pada Kolom daftar makanan,minuman & cake
 
 # Makanan
-root_nasgor.set('0')
-root_martabak.set('0')
-root_sate.set('0')
-root_kebab.set('0')
-root_roba.set('0')
-root_naskun.set('0')
-root_nasbak.set('0')
-root_nashim.set('0')
-root_nasput.set('0')
+root_nasgor.set('--')
+root_martabak.set('--')
+root_sate.set('--')
+root_kebab.set('--')
+root_roba.set('--')
+root_naskun.set('--')
+root_nasbak.set('--')
+root_nashim.set('--')
+root_nasput.set('--')
 
 
 # Minuman
 
-root_fanta.set('0')
-root_cocacola.set('0')
-root_sprite.set('0')
-root_fanta.set('0')
-root_jusmangga.set('0')
-root_jusjeruk.set('0')
-root_jusalpukat.set('0')
-root_jusapel.set('0')
-root_jusdurian.set('0')
-root_juspisang.set('0')
+root_fanta.set('--')
+root_cocacola.set('--')
+root_sprite.set('--')
+root_fanta.set('--')
+root_jusmangga.set('--')
+root_jusjeruk.set('--')
+root_jusalpukat.set('--')
+root_jusapel.set('--')
+root_jusdurian.set('--')
+root_juspisang.set('--')
 
 
 # Kue
 
-root_bolu.set('0')
-root_brownis.set('0')
-root_lapiskukus.set('0')
-root_marble.set('0')
-root_sponge.set('0')
-root_butter.set('0')
-root_cotton.set('0')
-root_cheese.set('0')
-root_mocha.set('0')
+root_bolu.set('--')
+root_brownis.set('--')
+root_lapiskukus.set('--')
+root_marble.set('--')
+root_sponge.set('--')
+root_butter.set('--')
+root_cotton.set('--')
+root_cheese.set('--')
+root_mocha.set('--')
+
+# Harga Frame
+
+makanan_var = StringVar()
+minuman_var = StringVar()
+cake_var = StringVar()
+subtotal = StringVar()
+pajak = StringVar()
+total = StringVar()
 
 #---------------------------------------------
 
@@ -345,6 +357,68 @@ cheese.grid(row=7, column=1)
 
 mocha = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_mocha)
 mocha.grid(row=8, column=1)
+
+
+# Membuat Label Total harga makanan, minuman & cake
+
+# Makanan
+labelmakanan = Label(hargaframe, text='Total Harga Makanan', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+labelmakanan.grid(row=0,column=0)
+
+textlabelmakanan = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='white', state='readonly', textvariable='makanan_var') 
+textlabelmakanan.grid(row=0, column=1, padx=36)
+
+# Minuman
+labelminuman = Label(hargaframe, text='Total Harga Minuman', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+labelminuman.grid(row=1,column=0)
+
+textlabelminuman = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable='minuman_var') 
+textlabelminuman.grid(row=1, column=1, padx=36)
+
+# Cake
+labelcake = Label(hargaframe, text='Total Harga Cake', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+labelcake.grid(row=2,column=0, sticky=W)
+
+textlabelcake = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='white', state='readonly', textvariable='cake_var') 
+textlabelcake.grid(row=2, column=1, padx=36)
+
+# Sub total
+labelsubtotal = Label(hargaframe, text='Sub Total', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+labelsubtotal.grid(row=0, column=2)
+
+textsubtotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable='subtotal_var') 
+textsubtotal.grid(row=0, column=3, padx=36)
+
+# Pajak
+labelpajak = Label(hargaframe, text='Pajak', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+labelpajak.grid(row=1, column=2, sticky=W)
+
+textpajak = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable='pajak_var') 
+textpajak.grid(row=1, column=3, padx=36)
+
+# Total
+labeltotal = Label(hargaframe, text='Total', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+labeltotal.grid(row=2, column=2, sticky=W)
+
+texttotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='white', state='readonly', textvariable='total_var') 
+texttotal.grid(row=2, column=3, padx=36)
+
+# Keterangan: 
+# Grid = adalah sebuah penempatan suatu widget kedalam tabel, contohnya seperti row(baris), column(kolom), dll
+# untuk pengaturan grid kita bisa mampu mengubahnya dan mengatur sesuai dengan keinginan kita.  
+
+
+#---------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 
 
