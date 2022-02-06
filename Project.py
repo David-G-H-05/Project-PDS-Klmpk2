@@ -14,7 +14,7 @@ window_size = a.geometry('1270x690+0+0') #Set ukuran window  (diubah) (
 
 size_tetap = a.resizable(0,0)
 
-window_color= a.config(bg='firebrick4') #Set warna windows (diubah)
+window_color= a.config(bg='#0B141A') #Set warna windows (diubah)
 
 
 #  Text in Window = 'CASHIER MANAGEMENT SYSTEM'
@@ -22,13 +22,13 @@ window_color= a.config(bg='firebrick4') #Set warna windows (diubah)
 topframe = Frame(a, bd=11, relief=RIDGE, bg='red') # untuk background bisa (diubah)
 topframe.pack(side=TOP)
 
-project_name = Label(topframe, text='CASHIER MANAGEMENT SYSTEM', font=('Times New Roman', 32, 'bold'), bg='blue', fg='white', width=53) # (diubah)
+project_name = Label(topframe, text='CASHIER MANAGEMENT SYSTEM', font=('Times New Roman', 30, 'bold'), bg='blue', fg='white', width=51) # (diubah)
 project_name.grid(row=0, column=0)
 
 # Frame
 
 
-menuframe = Frame(a, bd=10, relief=RIDGE, bg='firebrick4') #bisa menambahkan warna background  (bg)
+menuframe = Frame(a, bd=16, relief=RIDGE, bg='firebrick4') #bisa menambahkan warna background  (bg)
 menuframe.pack(side=LEFT)
 
 hargaframe = Frame(menuframe, bd=4, relief=RIDGE, bg='firebrick4', pady=10) #bisa menambahkan warna background  (bg)
@@ -45,18 +45,18 @@ cake_frame.pack(side=LEFT)
 
 
 # ------------
-rightframe = Frame(a, bd=15, relief=RIDGE)
+rightframe = Frame(a, bd=15, relief=RIDGE, bg='red4')
 rightframe.pack(side=RIGHT)
 
-# Calculator
+# Fitur bagian kanan
 
-calculatorframe = Frame(rightframe, bd=1, relief=RIDGE)
+calculatorframe = Frame(rightframe, bd=1, relief=RIDGE, bg='red4')
 calculatorframe.pack()
 
-recieptframe = Frame(rightframe, bd=4, relief=RIDGE)
-recieptframe.pack()
+strukframe = Frame(rightframe, bd=4, relief=RIDGE, bg='red4')
+strukframe.pack()
 
-tombolframe = Frame(rightframe, bd=3, relief=RIDGE)
+tombolframe = Frame(rightframe, bd=3, relief=RIDGE, bg='red4')
 tombolframe.pack()
 
 #VARIABEL yang menghubungkan dengan daftar makanan
@@ -366,42 +366,42 @@ labelmakanan = Label(hargaframe, text='Total Harga Makanan', font=('Times New Ro
 labelmakanan.grid(row=0,column=0)
 
 textlabelmakanan = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='white', state='readonly', textvariable='makanan_var') 
-textlabelmakanan.grid(row=0, column=1, padx=36)
+textlabelmakanan.grid(row=0, column=1, padx=35)
 
 # Minuman
 labelminuman = Label(hargaframe, text='Total Harga Minuman', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labelminuman.grid(row=1,column=0)
 
 textlabelminuman = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable='minuman_var') 
-textlabelminuman.grid(row=1, column=1, padx=36)
+textlabelminuman.grid(row=1, column=1, padx=35)
 
 # Cake
 labelcake = Label(hargaframe, text='Total Harga Cake', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labelcake.grid(row=2,column=0, sticky=W)
 
 textlabelcake = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='white', state='readonly', textvariable='cake_var') 
-textlabelcake.grid(row=2, column=1, padx=36)
+textlabelcake.grid(row=2, column=1, padx=35)
 
 # Sub total
 labelsubtotal = Label(hargaframe, text='Sub Total', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labelsubtotal.grid(row=0, column=2)
 
 textsubtotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable='subtotal_var') 
-textsubtotal.grid(row=0, column=3, padx=36)
+textsubtotal.grid(row=0, column=3, padx=35)
 
 # Pajak
 labelpajak = Label(hargaframe, text='Pajak', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labelpajak.grid(row=1, column=2, sticky=W)
 
 textpajak = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable='pajak_var') 
-textpajak.grid(row=1, column=3, padx=36)
+textpajak.grid(row=1, column=3, padx=35)
 
 # Total
 labeltotal = Label(hargaframe, text='Total', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labeltotal.grid(row=2, column=2, sticky=W)
 
 texttotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='white', state='readonly', textvariable='total_var') 
-texttotal.grid(row=2, column=3, padx=36)
+texttotal.grid(row=2, column=3, padx=35)
 
 # Keterangan: 
 # Grid = adalah sebuah penempatan suatu widget kedalam tabel, contohnya seperti row(baris), column(kolom), dll
@@ -410,17 +410,88 @@ texttotal.grid(row=2, column=3, padx=36)
 
 #---------------------------------------------------------------------------------------------
 
+# Membuat Tombol untuk menghitung total harga
+#Keterangan = menggunakan variabel tombolframe untuk membuat sebuah tombol
+
+tombol_total = Button(tombolframe, text='Total', font=('Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=6)
+tombol_total.grid(row=0, column=0)
+
+tombol_struk = Button(tombolframe, text='Struk', font=('Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=6)
+tombol_struk.grid(row=0, column=1)
+
+tombol_simpan = Button(tombolframe, text='Simpan', font=('Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=6)
+tombol_simpan.grid(row=0, column=2)
+
+tombol_kirim = Button(tombolframe, text='Kirim', font=('Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=6)
+tombol_kirim.grid(row=0, column=3)
+
+tombol_reset = Button(tombolframe, text='Reset', font=('Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=6)
+tombol_reset.grid(row=0, column=4)
+
+
+# Membuat Tempat untuk hasil Struk 
+
+text_struk = Text(strukframe,  font=('Times New Roman', 14, 'bold'), bg='white', fg='black',width=42, height=14)
+text_struk.grid(row=0, column=0)
+
+
+#---------------------------------------------------------------------------------------------
+
+
+# Calculator
+
+kalkulatorfield = Entry(calculatorframe, font=('Times New Roman', 16, 'bold'), width=42)
+kalkulatorfield.grid(row=0, column=0, columnspan=8)
 
 
 
+tombol1 = Button(calculatorframe, text='1', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol1.grid(row=1, column=0)
 
+tombol2 = Button(calculatorframe, text='2', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol2.grid(row=1, column=1)
 
+tombol3 = Button(calculatorframe, text='3', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol3.grid(row=1, column=2) 
 
+tombolplus = Button(calculatorframe, text='+', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolplus.grid(row=1, column=3)
 
+tombol6 = Button(calculatorframe, text='6', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol6.grid(row=2, column=0)
 
+tombol5 = Button(calculatorframe, text='5', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol5.grid(row=2, column=1)
 
+tombol4 = Button(calculatorframe, text='4', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol4.grid(row=2, column=2)
 
+tombolminus = Button(calculatorframe, text='-', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolminus.grid(row=2, column=3)
 
+tombol7 = Button(calculatorframe, text='7', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol7.grid(row=3, column=0)
+
+tombol8 = Button(calculatorframe, text='8', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol8.grid(row=3, column=1)
+
+tombol9 = Button(calculatorframe, text='9', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol9.grid(row=3, column=2)
+
+tombolkali = Button(calculatorframe, text='*', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolkali.grid(row=3, column=3)
+
+tombolhasil = Button(calculatorframe, text='=', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolhasil.grid(row=4, column=0)
+
+tombol0 = Button(calculatorframe, text='0', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol0.grid(row=4, column=1)
+
+tombolclear = Button(calculatorframe, text='Clear', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolclear.grid(row=4, column=2)
+
+tombolbagi = Button(calculatorframe, text='/', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolbagi.grid(row=4, column=3)
 
 
 
