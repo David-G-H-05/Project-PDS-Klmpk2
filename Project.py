@@ -1,4 +1,5 @@
 from cgitb import text
+from distutils import command
 from faulthandler import disable
 from sys import dllhandle
 from tkinter import *
@@ -10,11 +11,11 @@ from turtle import left, right
 a = Tk()
 window_name = a.title('Cashier Management System') #Pemberian Title/Judul pada Project
 
-window_size = a.geometry('1270x690+0+0') #Set ukuran window  (diubah) (
+window_size = a.geometry('1270x690+155+55') #Set ukuran window  (diubah) (
 
 size_tetap = a.resizable(0,0)
 
-window_color= a.config(bg='#0B141A') #Set warna windows (diubah)
+window_color= a.config(bg='red') #Set warna windows (diubah)
 
 
 #  Text in Window = 'CASHIER MANAGEMENT SYSTEM'
@@ -383,6 +384,7 @@ textlabelcake = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, wi
 textlabelcake.grid(row=2, column=1, padx=35)
 
 # Sub total
+# Sub total itu gabungan harga makanan, minuman & cake
 labelsubtotal = Label(hargaframe, text='Sub Total', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labelsubtotal.grid(row=0, column=2)
 
@@ -397,6 +399,7 @@ textpajak = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=
 textpajak.grid(row=1, column=3, padx=35)
 
 # Total
+# Total berbeda dengan subtotal karena subtotal tidak termasuk pajak
 labeltotal = Label(hargaframe, text='Total', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labeltotal.grid(row=2, column=2, sticky=W)
 
@@ -439,59 +442,86 @@ text_struk.grid(row=0, column=0)
 
 
 # Calculator
+#Function
+operator = ''
+def tombolclick(angka): #Function untuk mengambil nilai dari tombol
+    global operator 
+    operator = operator + angka
+    kalkulatorfield.delete(0, END)
+    kalkulatorfield.insert(END, operator)
+
+def clear(): #Function untuk menghapus semua nilai dari kalkulator
+    global operator # jika tidak menggunakan global maka nilai yang sebelumnya akan muncul kembali 
+    operator = ''
+    kalkulatorfield.delete(0, END)
+
+def hasil(): #Function untuk menghitung hasil dari kalkulator
+    global operator
+    hasil = str(eval(operator))
+    kalkulatorfield.delete(0, END)
+    kalkulatorfield.insert(END, hasil)
+    operator = ''
+
+
 
 kalkulatorfield = Entry(calculatorframe, font=('Times New Roman', 16, 'bold'), width=42)
-kalkulatorfield.grid(row=0, column=0, columnspan=8)
+kalkulatorfield.grid(row=0, column=0, columnspan=10)
 
 
-
-tombol1 = Button(calculatorframe, text='1', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol1 = Button(calculatorframe, text='1', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('1'))
 tombol1.grid(row=1, column=0)
 
-tombol2 = Button(calculatorframe, text='2', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol2 = Button(calculatorframe, text='2', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('2'))
 tombol2.grid(row=1, column=1)
 
-tombol3 = Button(calculatorframe, text='3', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol3 = Button(calculatorframe, text='3', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('3'))
 tombol3.grid(row=1, column=2) 
 
-tombolplus = Button(calculatorframe, text='+', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolplus = Button(calculatorframe, text='+', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('+'))
 tombolplus.grid(row=1, column=3)
 
-tombol6 = Button(calculatorframe, text='6', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol6 = Button(calculatorframe, text='6', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('6'))
 tombol6.grid(row=2, column=0)
 
-tombol5 = Button(calculatorframe, text='5', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol5 = Button(calculatorframe, text='5', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('5'))
 tombol5.grid(row=2, column=1)
 
-tombol4 = Button(calculatorframe, text='4', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol4 = Button(calculatorframe, text='4', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('4'))
 tombol4.grid(row=2, column=2)
 
-tombolminus = Button(calculatorframe, text='-', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolminus = Button(calculatorframe, text='-', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('-'))
 tombolminus.grid(row=2, column=3)
 
-tombol7 = Button(calculatorframe, text='7', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol7 = Button(calculatorframe, text='7', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('7'))
 tombol7.grid(row=3, column=0)
 
-tombol8 = Button(calculatorframe, text='8', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol8 = Button(calculatorframe, text='8', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('8'))
 tombol8.grid(row=3, column=1)
 
-tombol9 = Button(calculatorframe, text='9', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol9 = Button(calculatorframe, text='9', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('9'))
 tombol9.grid(row=3, column=2)
 
-tombolkali = Button(calculatorframe, text='*', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolkali = Button(calculatorframe, text='*', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('*'))
 tombolkali.grid(row=3, column=3)
 
-tombolhasil = Button(calculatorframe, text='=', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolhasil = Button(calculatorframe, text='=', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=hasil)
 tombolhasil.grid(row=4, column=0)
 
-tombol0 = Button(calculatorframe, text='0', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombol0 = Button(calculatorframe, text='0', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('0'))
 tombol0.grid(row=4, column=1)
 
-tombolclear = Button(calculatorframe, text='Clear', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolclear = Button(calculatorframe, text='Clear', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=clear)
 tombolclear.grid(row=4, column=2)
 
-tombolbagi = Button(calculatorframe, text='/', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6)
+tombolbagi = Button(calculatorframe, text='/', font=('Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('/'))
 tombolbagi.grid(row=4, column=3)
+
+
+#---------------------------------------------------------------------------------------------
+
+
+
+
 
 
 
