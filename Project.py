@@ -8,6 +8,267 @@ from tkinter.ttk import Labelframe
 from tokenize import String
 from turtle import left, right
 
+
+# Function untuk Menu Makanan
+
+def nasgor():
+    if var1.get() == 1:
+        input_nasgor.config(state=NORMAL)
+        input_nasgor.delete(0, END) # yang berguna saat di ceklis tanda min akan hilang 
+        input_nasgor.focus() 
+    else:
+        input_nasgor.config(state=DISABLED)
+        root_nasgor.set('-') # jika saat ceklis dihilangkan makan akan kembali seperti semula
+
+def martabak():
+    if var2.get() == 1:
+        input_martabak.config(state=NORMAL)
+        input_martabak.delete(0, END)
+        input_martabak.focus()
+    else:
+        input_martabak.config(state=DISABLED)
+        root_martabak.set('-')
+
+def sate():
+    if var3.get() == 1:
+        input_sate.config(state=NORMAL)
+        input_sate.delete(0, END)
+        input_sate.focus()
+    else:
+        input_sate.config(state=DISABLED)
+        root_sate.set('-')
+
+def kebab():
+    if var4.get() == 1:
+        input_kebab.config(state=NORMAL)
+        input_kebab.delete(0, END)
+        input_kebab.focus()
+    else:
+        input_kebab.config(state=DISABLED)
+        root_kebab.set('-')
+
+def roba():
+    if var5.get() == 1:
+        input_roba.config(state=NORMAL)
+        input_roba.delete(0, END)
+        input_roba.focus()
+    else:
+        input_roba.config(state=DISABLED)
+        root_roba.set('-')
+
+def naskun():
+    if var6.get() == 1:
+        input_naskun.config(state=NORMAL)
+        input_naskun.delete(0, END)
+        input_naskun.focus()
+    else:
+        input_naskun.config(state=DISABLED)
+        root_naskun.set('-')
+
+def nasbak():
+    if var7.get() == 1:
+        input_nasbak.config(state=NORMAL)
+        input_nasbak.delete(0, END)
+        input_nasbak.focus()
+    else:
+        input_nasbak.config(state=DISABLED)
+        root_nasbak.set('-')
+
+def nashim():
+    if var8.get() == 1:
+        input_nashim.config(state=NORMAL)
+        input_nashim.delete(0, END)
+        input_nashim.focus()
+    else:
+        input_nashim.config(state=DISABLED)
+        root_nashim.set('-')
+
+def nasput():
+    if var9.get() == 1:
+        input_nasput.config(state=NORMAL)
+        input_nasput.delete(0, END)
+        input_nasput.focus()
+    else:
+        input_nasput.config(state=DISABLED)
+        root_nasput.set('-')
+
+
+# Function untuk Menu Minuman
+
+def fanta():
+    if var10.get() == 1:
+        input_fanta.config(state=NORMAL)
+        input_fanta.delete(0, END)
+        input_fanta.focus()
+    else:
+        input_fanta.config(state=DISABLED)
+        root_fanta.set('-')
+
+def cocacola():
+    if var11.get() == 1:
+        input_cocacola.config(state=NORMAL)
+        input_cocacola.delete(0, END)
+        input_cocacola.focus()
+    else:
+        input_cocacola.config(state=DISABLED)
+        root_cocacola.set('-')
+
+def sprite():
+    if var12.get() == 1:
+        input_sprite.config(state=NORMAL)
+        input_sprite.delete(0, END)
+        input_sprite.focus()
+    else:
+        input_sprite.config(state=DISABLED)
+        root_sprite.set('-')
+
+def jusmangga():
+    if var13.get() == 1:
+        input_jusmangga.config(state=NORMAL)
+        input_jusmangga.delete(0, END)
+        input_jusmangga.focus()
+    else:
+        input_jusmangga.config(state=DISABLED)
+        root_jusmangga.set('-')
+
+def jusjeruk():
+    if var14.get() == 1:
+        input_jusjeruk.config(state=NORMAL)
+        input_jusjeruk.delete(0, END)
+        input_jusjeruk.focus()
+    else:
+        input_jusjeruk.config(state=DISABLED)
+        root_jusjeruk.set('-')
+
+def jusalpukat():
+    if var15.get() == 1:
+        input_jusalpukat.config(state=NORMAL)
+        input_jusalpukat.delete(0, END)
+        input_jusalpukat.focus()
+    else:
+        input_jusalpukat.config(state=DISABLED)
+        root_jusalpukat.set('-')
+
+def jusapel():
+    if var16.get() == 1:
+        input_jusapel.config(state=NORMAL)
+        input_jusapel.delete(0, END)
+        input_jusapel.focus()
+    else:
+        input_jusapel.config(state=DISABLED)
+        root_jusapel.set('-')
+
+def jusdurian():
+    if var17.get() == 1:
+        input_jusdurian.config(state=NORMAL)
+        input_jusdurian.delete(0, END)
+        input_jusdurian.focus()
+    else:
+        input_jusdurian.config(state=DISABLED)
+        root_jusdurian.set('-')
+
+def juspisang():
+    if var18.get() == 1:
+        input_juspisang.config(state=NORMAL)
+        input_juspisang.delete(0, END)
+        input_juspisang.focus()
+    else:
+        input_juspisang.config(state=DISABLED)
+        root_juspisang.set('-')
+
+
+# Function untuk Menu Kue
+
+def bolu():
+    if var19.get() == 1:
+        input_bolu.config(state=NORMAL)
+        input_bolu.delete(0, END)
+        input_bolu.focus()
+    else:
+        input_bolu.config(state=DISABLED)
+        root_bolu.set('-')
+
+def brownis():
+    if var20.get() == 1:
+        input_brownis.config(state=NORMAL)
+        input_brownis.delete(0, END)
+        input_brownis.focus()
+    else:
+        input_brownis.config(state=DISABLED)
+        root_brownis.set('-')
+
+def lapiskukus():
+    if var21.get() == 1:
+        input_lapiskukus.config(state=NORMAL)
+        input_lapiskukus.delete(0, END)
+        input_lapiskukus.focus()
+    else:
+        input_lapiskukus.config(state=DISABLED)
+        root_lapiskukus.set('-')
+
+def marble():
+    if var22.get() == 1:
+        input_marble.config(state=NORMAL)
+        input_marble.delete(0, END)
+        input_marble.focus()
+    else:
+        input_marble.config(state=DISABLED)
+        root_marble.set('-')
+
+def sponge():
+    if var23.get() == 1:
+        input_sponge.config(state=NORMAL)
+        input_sponge.delete(0, END)
+        input_sponge.focus()
+    else:
+        input_sponge.config(state=DISABLED)
+        root_sponge.set('-')
+
+def butter():
+    if var24.get() == 1:
+        input_butter.config(state=NORMAL)
+        input_butter.delete(0, END)
+        input_butter.focus()
+    else:
+        input_butter.config(state=DISABLED)
+        root_butter.set('-')
+
+def cotton():
+    if var25.get() == 1:
+        input_cotton.config(state=NORMAL)
+        input_cotton.delete(0, END)
+        input_cotton.focus()
+    else:
+        input_cotton.config(state=DISABLED)
+        root_cotton.set('-')
+
+def cheese():
+    if var26.get() == 1:
+        input_cheese.config(state=NORMAL)
+        input_cheese.delete(0, END)
+        input_cheese.focus()
+    else:
+        input_cheese.config(state=DISABLED)
+        root_cheese.set('-')
+
+def mocha():
+    if var27.get() == 1:
+        input_mocha.config(state=NORMAL)
+        input_mocha.delete(0, END)
+        input_mocha.focus()
+    else:
+        input_mocha.config(state=DISABLED)
+        root_mocha.set('-')
+
+
+
+
+
+
+
+
+
+
 a = Tk()
 window_name = a.title('Cashier Management System') #Pemberian Title/Judul pada Project
 
@@ -108,7 +369,6 @@ root_nasput = StringVar()
 root_fanta = StringVar()
 root_cocacola = StringVar()
 root_sprite = StringVar()
-root_fanta = StringVar()
 root_jusmangga = StringVar()
 root_jusjeruk = StringVar()
 root_jusalpukat = StringVar()
@@ -132,42 +392,41 @@ root_mocha = StringVar()
 # Pengisian Jumlah pada Kolom daftar makanan,minuman & cake
 
 # Makanan
-root_nasgor.set('--')
-root_martabak.set('--')
-root_sate.set('--')
-root_kebab.set('--')
-root_roba.set('--')
-root_naskun.set('--')
-root_nasbak.set('--')
-root_nashim.set('--')
-root_nasput.set('--')
+root_nasgor.set('-')
+root_martabak.set('-')
+root_sate.set('-')
+root_kebab.set('-')
+root_roba.set('-')
+root_naskun.set('-')
+root_nasbak.set('-')
+root_nashim.set('-')
+root_nasput.set('-')
 
 
 # Minuman
 
-root_fanta.set('--')
-root_cocacola.set('--')
-root_sprite.set('--')
-root_fanta.set('--')
-root_jusmangga.set('--')
-root_jusjeruk.set('--')
-root_jusalpukat.set('--')
-root_jusapel.set('--')
-root_jusdurian.set('--')
-root_juspisang.set('--')
+root_fanta.set('-')
+root_cocacola.set('-')
+root_sprite.set('-')
+root_jusmangga.set('-')
+root_jusjeruk.set('-')
+root_jusalpukat.set('-')
+root_jusapel.set('-')
+root_jusdurian.set('-')
+root_juspisang.set('-')
 
 
 # Kue
 
-root_bolu.set('--')
-root_brownis.set('--')
-root_lapiskukus.set('--')
-root_marble.set('--')
-root_sponge.set('--')
-root_butter.set('--')
-root_cotton.set('--')
-root_cheese.set('--')
-root_mocha.set('--')
+root_bolu.set('-')
+root_brownis.set('-')
+root_lapiskukus.set('-')
+root_marble.set('-')
+root_sponge.set('-')
+root_butter.set('-')
+root_cotton.set('-')
+root_cheese.set('-')
+root_mocha.set('-')
 
 # Harga Frame
 
@@ -181,183 +440,185 @@ total = StringVar()
 #---------------------------------------------
 
 # Daftar MAKANAN
+# sticky digunakan untuk meluruskan daftar makanan/minuman
 
-nasgor = Checkbutton(makanan_frame, text='Nasi Goreng', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var1) # untuk var disesuaikan dengan Variabelnya
-nasgor.grid(row=0, column=0, sticky=W) #sticky digunakan untuk meluruskan daftar makanan/minuman
 
-martabak = Checkbutton(makanan_frame, text='Martabak', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var2)
+nasgor = Checkbutton(makanan_frame, text='Nasi Goreng', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var1, command=nasgor) # untuk var disesuaikan dengan Variabelnya
+nasgor.grid(row=0, column=0, sticky=W) 
+
+martabak = Checkbutton(makanan_frame, text='Martabak', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var2, command=martabak)
 martabak.grid(row=1, column=0, sticky=W)
 
-sate = Checkbutton(makanan_frame, text='Sate', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var3)
+sate = Checkbutton(makanan_frame, text='Sate', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var3, command=sate)
 sate.grid(row=2, column=0, sticky=W)
 
-kebab = Checkbutton(makanan_frame, text='Kebab', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var4)
+kebab = Checkbutton(makanan_frame, text='Kebab', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var4, command=kebab)
 kebab.grid(row=3, column=0, sticky=W)
 
-roba = Checkbutton(makanan_frame, text='Roti Bakar', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var5)
+roba = Checkbutton(makanan_frame, text='Roti Bakar', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var5, command=roba)
 roba.grid(row=4, column=0, sticky=W)
 
-naskun = Checkbutton(makanan_frame, text='Nasi Kuning', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var6)
+naskun = Checkbutton(makanan_frame, text='Nasi Kuning', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var6, command=naskun)
 naskun.grid(row=5, column=0, sticky=W)
 
-nasbak = Checkbutton(makanan_frame, text='Nasi Bakar', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var7) 
+nasbak = Checkbutton(makanan_frame, text='Nasi Bakar', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var7, command=nasbak) 
 nasbak.grid(row=6, column=0, sticky=W)
 
-nashim = Checkbutton(makanan_frame, text='Nasi Hitam', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var8)
+nashim = Checkbutton(makanan_frame, text='Nasi Hitam', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var8, command=nashim)
 nashim.grid(row=7, column=0, sticky=W)
 
-nasput = Checkbutton(makanan_frame, text='Nasi Putih', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var9)
+nasput = Checkbutton(makanan_frame, text='Nasi Putih', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var9, command=nasput)
 nasput.grid(row=8, column=0, sticky=W)
 
 # ---------------- input jumlah makanan
 
-kotaknasgor = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_nasgor)
-kotaknasgor.grid(row=0, column=1)
+input_nasgor = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_nasgor)
+input_nasgor.grid(row=0, column=1)
 
-kotakmartabak = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_martabak)
-kotakmartabak.grid(row=1, column=1)
+input_martabak = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_martabak)
+input_martabak.grid(row=1, column=1)
 
-kotaksate = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_sate)
-kotaksate.grid(row=2, column=1)
+input_sate = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_sate)
+input_sate.grid(row=2, column=1)
 
-kotakkebab = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_kebab)
-kotakkebab.grid(row=3, column=1)
+input_kebab = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_kebab)
+input_kebab.grid(row=3, column=1)
 
-kotakroba = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_roba)
-kotakroba.grid(row=4, column=1)
+input_roba = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_roba)
+input_roba.grid(row=4, column=1)
 
-kotaknaskun = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_naskun)
-kotaknaskun.grid(row=5, column=1)
+input_naskun = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_naskun)
+input_naskun.grid(row=5, column=1)
 
-kotaknasbak = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_nasbak)
-kotaknasbak.grid(row=6, column=1)
+input_nasbak = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_nasbak)
+input_nasbak.grid(row=6, column=1)
 
-kotaknashim = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_nashim)
-kotaknashim.grid(row=7, column=1)
+input_nashim = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_nashim)
+input_nashim.grid(row=7, column=1)
 
-kotaknasput = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_nasput)
-kotaknasput.grid(row=8, column=1)
+input_nasput = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_nasput)
+input_nasput.grid(row=8, column=1)
 
 #----------------------------------------------------------
 
 # Daftar MINUMAN
 
-fanta = Checkbutton(minuman_frame, text='Fanta', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var10)
+fanta = Checkbutton(minuman_frame, text='Fanta', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var10, command=fanta)
 fanta.grid(row=0, column=0, sticky=W)
 
-cocacola = Checkbutton(minuman_frame, text='Cocacola', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var11)
+cocacola = Checkbutton(minuman_frame, text='Cocacola', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var11, command=cocacola)
 cocacola.grid(row=1, column=0, sticky=W)
 
-sprite = Checkbutton(minuman_frame, text='Sprite', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var12)
+sprite = Checkbutton(minuman_frame, text='Sprite', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var12, command=sprite)
 sprite.grid(row=2, column=0, sticky=W)
 
-jusmangga = Checkbutton(minuman_frame, text='Jus Mangga', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var13)
+jusmangga = Checkbutton(minuman_frame, text='Jus Mangga', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var13, command=jusmangga)
 jusmangga.grid(row=3, column=0, sticky=W)
 
-jusjeruk = Checkbutton(minuman_frame, text='Jus Jeruk', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var14)
+jusjeruk = Checkbutton(minuman_frame, text='Jus Jeruk', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var14, command=jusjeruk)
 jusjeruk.grid(row=4, column=0, sticky=W)
 
-jusalpukat = Checkbutton(minuman_frame, text='Jus Alpukat', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var15)
+jusalpukat = Checkbutton(minuman_frame, text='Jus Alpukat', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var15, command=jusalpukat)
 jusalpukat.grid(row=5, column=0, sticky=W)
 
-jusapel = Checkbutton(minuman_frame, text='Jus Apel', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var16)
+jusapel = Checkbutton(minuman_frame, text='Jus Apel', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var16, command=jusapel)
 jusapel.grid(row=6, column=0, sticky=W)
 
-jusdurian = Checkbutton(minuman_frame, text='Jus Durian', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var17)
+jusdurian = Checkbutton(minuman_frame, text='Jus Durian', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var17, command=jusdurian)
 jusdurian.grid(row=7, column=0, sticky=W)
 
-juspisang = Checkbutton(minuman_frame, text='Jus Pisang', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var18)
+juspisang = Checkbutton(minuman_frame, text='Jus Pisang', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var18, command=juspisang)
 juspisang.grid(row=8, column=0, sticky=W)
 
 
 # ---------------- input jumlah minuman
 
-fanta = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_fanta)
-fanta.grid(row=0, column=1)
+input_fanta = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_fanta)
+input_fanta.grid(row=0, column=1)
 
-cocacola = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_cocacola)
-cocacola.grid(row=1, column=1)
+input_cocacola = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_cocacola)
+input_cocacola.grid(row=1, column=1)
 
-sprite = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_sprite)
-sprite.grid(row=2, column=1)
+input_sprite = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_sprite)
+input_sprite.grid(row=2, column=1)
 
-jusmangga = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_jusmangga)
-jusmangga.grid(row=3, column=1)
+input_jusmangga = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_jusmangga)
+input_jusmangga.grid(row=3, column=1)
 
-jusjeruk = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_jusjeruk)
-jusjeruk.grid(row=4, column=1)
+input_jusjeruk = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_jusjeruk)
+input_jusjeruk.grid(row=4, column=1)
 
-jusalpukat = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_jusalpukat)
-jusalpukat.grid(row=5, column=1)
+input_jusalpukat = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_jusalpukat)
+input_jusalpukat.grid(row=5, column=1)
 
-jusapel = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_jusapel)
-jusapel.grid(row=6, column=1)
+input_jusapel = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_jusapel)
+input_jusapel.grid(row=6, column=1)
 
-jusdurian = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_jusdurian)
-jusdurian.grid(row=7, column=1)
+input_jusdurian = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_jusdurian)
+input_jusdurian.grid(row=7, column=1)
 
-juspisang = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_juspisang)
-juspisang.grid(row=8, column=1)
+input_juspisang = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_juspisang)
+input_juspisang.grid(row=8, column=1)
 
 
 # Daftar CAKE
 
-bolu = Checkbutton(cake_frame, text='Bolu Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var19)
+bolu = Checkbutton(cake_frame, text='Bolu Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var19, command=bolu)
 bolu.grid(row=0, column=0, sticky=W)
 
-brownis = Checkbutton(cake_frame, text='Bolu Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var20)
+brownis = Checkbutton(cake_frame, text='Bolu Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var20, command=brownis)
 brownis.grid(row=1, column=0, sticky=W)
 
-lapiskukus = Checkbutton(cake_frame, text='Lapis Kukus', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var21)
+lapiskukus = Checkbutton(cake_frame, text='Lapis Kukus', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var21, command=lapiskukus)
 lapiskukus.grid(row=2, column=0, sticky=W)
 
-marble = Checkbutton(cake_frame, text='Marble Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var22)
+marble = Checkbutton(cake_frame, text='Marble Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var22, command=marble)
 marble.grid(row=3, column=0, sticky=W)
 
-sponge = Checkbutton(cake_frame, text='Sponge Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var23)
+sponge = Checkbutton(cake_frame, text='Sponge Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var23, command=sponge)
 sponge.grid(row=4, column=0, sticky=W)
 
-butter = Checkbutton(cake_frame, text='Butter Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var24)
+butter = Checkbutton(cake_frame, text='Butter Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var24, command=butter)
 butter.grid(row=5, column=0, sticky=W)
 
-cotton = Checkbutton(cake_frame, text='Cotton Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var25)
+cotton = Checkbutton(cake_frame, text='Cotton Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var25, command=cotton)
 cotton.grid(row=6, column=0, sticky=W)
 
-cheese = Checkbutton(cake_frame, text='Cheese Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var26)
+cheese = Checkbutton(cake_frame, text='Cheese Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var26, command=cheese)
 cheese.grid(row=7, column=0, sticky=W)
 
-mocha = Checkbutton(cake_frame, text='Mocha Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var27)
+mocha = Checkbutton(cake_frame, text='Mocha Cake', font=('Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var27, command=mocha)
 mocha.grid(row=8, column=0, sticky=W)
 
 
 # ---------------- input jumlah cake
 
-bolu = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_bolu)
-bolu.grid(row=0, column=1)
+input_bolu = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_bolu)
+input_bolu.grid(row=0, column=1)
 
-brownis = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_brownis)
-brownis.grid(row=1, column=1)
+input_brownis = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_brownis)
+input_brownis.grid(row=1, column=1)
 
-lapiskukus = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_lapiskukus)
-lapiskukus.grid(row=2, column=1)
+input_lapiskukus = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_lapiskukus)
+input_lapiskukus.grid(row=2, column=1)
 
-marble = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_marble)
-marble.grid(row=3, column=1)
+input_marble = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_marble)
+input_marble.grid(row=3, column=1)
 
-sponge = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_sponge)
-sponge.grid(row=4, column=1)
+input_sponge = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_sponge)
+input_sponge.grid(row=4, column=1)
 
-butter = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_butter)
-butter.grid(row=5, column=1)
+input_butter = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_butter)
+input_butter.grid(row=5, column=1)
 
-cotton = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_cotton)
-cotton.grid(row=6, column=1)
+input_cotton = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_cotton)
+input_cotton.grid(row=6, column=1)
 
-cheese = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_cheese)
-cheese.grid(row=7, column=1)
+input_cheese = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_cheese)
+input_cheese.grid(row=7, column=1)
 
-mocha = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_mocha)
-mocha.grid(row=8, column=1)
+input_mocha = Entry(cake_frame, font=('Times New Roman', 18, 'bold'), bd=7, width=6, state=DISABLED, textvariable=root_mocha)
+input_mocha.grid(row=8, column=1)
 
 
 # Membuat Label Total harga makanan, minuman & cake
