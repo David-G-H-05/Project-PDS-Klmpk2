@@ -1,5 +1,4 @@
 from cgitb import text
-from distutils import command
 from faulthandler import disable
 from sys import dllhandle
 from tkinter import *
@@ -7,6 +6,55 @@ from tkinter import font
 from tkinter.ttk import Labelframe
 from tokenize import String
 from turtle import left, right
+
+
+def totalharga():
+    
+        item1 = int(root_nasgor.get().replace('-', '0'))
+        item2 = int(root_martabak.get().replace('-', '0'))
+        item3 = int(root_sate.get().replace('-', '0'))
+        item4 = int(root_kebab.get().replace('-', '0'))
+        item5 = int(root_roba.get().replace('-', '0'))
+        item6 = int(root_naskun.get().replace('-', '0'))
+        item7 = int(root_nasbak.get().replace('-', '0'))
+        item8 = int(root_nashim.get().replace('-', '0'))
+        item9 = int(root_nasput.get().replace('-', '0'))
+
+        item10 = int(root_fanta.get().replace('-', '0'))
+        item11 = int(root_cocacola.get().replace('-', '0'))
+        item12 = int(root_sprite.get().replace('-', '0'))
+        item13 = int(root_jusmangga.get().replace('-', '0'))
+        item14 = int(root_jusjeruk.get().replace('-', '0'))
+        item15 = int(root_jusalpukat.get().replace('-', '0'))
+        item16 = int(root_jusapel.get().replace('-', '0'))
+        item17 = int(root_jusdurian.get().replace('-', '0'))
+        item18 = int(root_juspisang.get().replace('-', '0'))
+
+        item19 = int(root_bolu.get().replace('-', '0'))
+        item20 = int(root_brownis.get().replace('-', '0'))
+        item21 = int(root_lapiskukus.get().replace('-', '0'))
+        item22 = int(root_marble.get().replace('-', '0'))
+        item23 = int(root_sponge.get().replace('-', '0'))
+        item24 = int(root_butter.get().replace('-', '0'))
+        item25 = int(root_cotton.get().replace('-', '0'))
+        item26 = int(root_cheese.get().replace('-', '0'))
+        item27 = int(root_mocha.get().replace('-', '0'))
+
+            # Macam-Macam harga pada menu makanan,minuman, & kue
+
+        harga_makanan = (item1*10000) + (item2*9000) + (item3*2000) + (item4*22000) + (item5*12000) + (item6*15000) +(item7*15000) + (item8*15000) + (item9*15000)
+
+        harga_minuman = (item10*5000) + (item11*5000) + (item12*5000) + (item13*5000) + (item14*5000) + (item15*5000) + (item16*5000) + (item17*5000) + (item18*5000)
+
+        harga_kue = (item19*5000) + (item20*5000) + (item21*5000) + (item22*5000) + (item23*5000) + (item24*5000) + (item25*5000) + (item26*5000) + (item27*5000)
+
+        makanan_var.set(str(harga_makanan))
+        minuman_var.set(str(harga_minuman))
+        cake_var.set(str(harga_kue))
+
+
+
+
 
 
 # Function untuk Menu Makanan
@@ -433,9 +481,9 @@ root_mocha.set('-')
 makanan_var = StringVar()
 minuman_var = StringVar()
 cake_var = StringVar()
-subtotal = StringVar()
-pajak = StringVar()
-total = StringVar()
+subtotal_var = StringVar()
+pajak_var = StringVar()
+total_var = StringVar()
 
 #---------------------------------------------
 
@@ -627,36 +675,39 @@ input_mocha.grid(row=8, column=1)
 labelmakanan = Label(hargaframe, text='Total Harga Makanan', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labelmakanan.grid(row=0,column=0)
 
-textlabelmakanan = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='white', state='readonly', textvariable='makanan_var') 
+textlabelmakanan = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='black', state='readonly', textvariable=makanan_var) 
 textlabelmakanan.grid(row=0, column=1, padx=35)
 
 # Minuman
 labelminuman = Label(hargaframe, text='Total Harga Minuman', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labelminuman.grid(row=1,column=0)
 
-textlabelminuman = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable='minuman_var') 
+textlabelminuman = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly',fg='black', textvariable=minuman_var) 
 textlabelminuman.grid(row=1, column=1, padx=35)
 
 # Cake
 labelcake = Label(hargaframe, text='Total Harga Cake', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labelcake.grid(row=2,column=0, sticky=W)
 
-textlabelcake = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='white', state='readonly', textvariable='cake_var') 
+textlabelcake = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='black', state='readonly', textvariable=cake_var) 
 textlabelcake.grid(row=2, column=1, padx=35)
+
+
+
 
 # Sub total
 # Sub total itu gabungan harga makanan, minuman & cake
 labelsubtotal = Label(hargaframe, text='Sub Total', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labelsubtotal.grid(row=0, column=2)
 
-textsubtotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable='subtotal_var') 
+textsubtotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable=subtotal_var) 
 textsubtotal.grid(row=0, column=3, padx=35)
 
 # Pajak
 labelpajak = Label(hargaframe, text='Pajak', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labelpajak.grid(row=1, column=2, sticky=W)
 
-textpajak = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable='pajak_var') 
+textpajak = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable=pajak_var) 
 textpajak.grid(row=1, column=3, padx=35)
 
 # Total
@@ -664,7 +715,7 @@ textpajak.grid(row=1, column=3, padx=35)
 labeltotal = Label(hargaframe, text='Total', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labeltotal.grid(row=2, column=2, sticky=W)
 
-texttotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='white', state='readonly', textvariable='total_var') 
+texttotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='white', state='readonly', textvariable=total_var) 
 texttotal.grid(row=2, column=3, padx=35)
 
 # Keterangan: 
@@ -677,7 +728,7 @@ texttotal.grid(row=2, column=3, padx=35)
 # Membuat Tombol untuk menghitung total harga
 #Keterangan = menggunakan variabel tombolframe untuk membuat sebuah tombol
 
-tombol_total = Button(tombolframe, text='Total', font=('Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=6)
+tombol_total = Button(tombolframe, text='Total', font=('Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=6, command=totalharga)
 tombol_total.grid(row=0, column=0)
 
 tombol_struk = Button(tombolframe, text='Struk', font=('Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=6)
@@ -703,7 +754,7 @@ text_struk.grid(row=0, column=0)
 
 
 # Calculator
-#Function
+#Function pada Kalkulator 
 operator = ''
 def tombolclick(angka): #Function untuk mengambil nilai dari tombol
     global operator 
