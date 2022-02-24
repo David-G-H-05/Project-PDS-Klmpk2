@@ -6,10 +6,16 @@ from tkinter import font
 from tkinter.ttk import Labelframe
 from tokenize import String
 from turtle import left, right
+import random
+import time
 
 
+
+
+
+# Funtion untuk menghitung total harga
 def totalharga():
-    
+    #replace berguna untuk mengganti string 
         item1 = int(root_nasgor.get().replace('-', '0'))
         item2 = int(root_martabak.get().replace('-', '0'))
         item3 = int(root_sate.get().replace('-', '0'))
@@ -52,7 +58,13 @@ def totalharga():
         minuman_var.set(str(harga_minuman))
         cake_var.set(str(harga_kue))
 
+        subtotal = harga_makanan + harga_minuman + harga_kue
+        subtotal_var.set(str(subtotal))
 
+        pajak_var.set("2000")
+
+        total = subtotal + 2000
+        total_var.set(str(total))
 
 
 
@@ -315,7 +327,7 @@ def mocha():
 
 
 
-
+# Bagian tampilan (Frontend)
 
 a = Tk()
 window_name = a.title('Cashier Management System') #Pemberian Title/Judul pada Project
@@ -715,7 +727,7 @@ textpajak.grid(row=1, column=3, padx=35)
 labeltotal = Label(hargaframe, text='Total', font=('Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
 labeltotal.grid(row=2, column=2, sticky=W)
 
-texttotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, fg='white', state='readonly', textvariable=total_var) 
+texttotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'), bd=6, width=14, state='readonly', textvariable=total_var) 
 texttotal.grid(row=2, column=3, padx=35)
 
 # Keterangan: 
