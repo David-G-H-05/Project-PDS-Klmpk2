@@ -1135,8 +1135,6 @@ tombolbagi = Button(calculatorframe, text='/', font=('Times New Roman', 15, 'bol
                     bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('/'))
 tombolbagi.grid(row=4, column=3)
 
-
 # ---------------------------------------------------------------------------------------------
-
 
 mainloop()
