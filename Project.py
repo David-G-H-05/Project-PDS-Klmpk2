@@ -537,7 +537,7 @@ a = Tk()
 # Pemberian Title/Judul pada Project
 window_name = a.title('Cashier Management System')
 
-window_size = a.geometry('1270x690+155+55')  # Set ukuran window  (diubah) (
+window_size = a.geometry('1270x690+155+55')  # Set ukuran window  (diubah)
 
 size_tetap = a.resizable(0, 0)
 
