@@ -550,7 +550,7 @@ window_color = a.config(bg='red')  # Set warna windows (diubah)
 topframe = Frame(a, bd=11, relief=RIDGE, bg='red')
 topframe.pack(side=TOP)
 
-project_name = Label(topframe, text='CASHIER MANAGEMENT SYSTEM', font=(
+project_name = Label(topframe, text='Cashier Management System', font=(
     'Times New Roman', 30, 'bold'), bg='blue', fg='white', width=51)  # (diubah)
 project_name.grid(row=0, column=0)
 
