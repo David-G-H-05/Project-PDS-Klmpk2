@@ -116,8 +116,8 @@ def struk():
         tanggal = time.strftime("%d/%m/%Y")  # Memasukkan bagian tanggal
         jam = time.strftime("%H:%M:%S")  # memasukkan bagian waktu
         text_struk.insert(END, "Cafe Indah Jaya \n")
-        text_struk.insert(END, "Tanggal/Waktu:        " + tanggal + "         " + jam + '\n')    # jika menggunakan /t maka jarak pisahnya terlalu jauh
-        text_struk.insert(END, "----------------------------------------------------------------\n")
+        text_struk.insert(END,tanggal + "\t\t\t         " + jam + '\n')    # jika menggunakan /t maka jarak pisahnya terlalu jauh
+        text_struk.insert(END, "---------------------------------------------------------------\n")
         text_struk.insert(END, "  Menu: \t\t" + "\tHarga (Rp)\n\n")
         if root_nasgor.get() != "-":
             text_struk.insert(END, f"  Nasi Goreng:\t\t\t {int(root_nasgor.get())*10000} \n\n")
@@ -176,15 +176,15 @@ def struk():
         if root_mocha.get() != "-":
             text_struk.insert(END, f"  Mocha Cake:\t\t\t {int(root_mocha.get())*3000} \n\n")
 
-        text_struk.insert(END, "----------------------------------------------------------------\n")
+        text_struk.insert(END, "---------------------------------------------------------------\n")
         if harga_makanan != "-":
             text_struk.insert(END, f"  Total Harga Makanan:\t\t\tRp. {harga_makanan} \n\n")
-        if harga_minuman != "-":
+        if  harga_minuman != "-":
             text_struk.insert(END, f"  Total Harga Minuman:\t\t\tRp. {harga_minuman} \n\n")
         if harga_kue != "-":
             text_struk.insert(END, f"  Total Harga Cake:\t\t\tRp. {harga_kue} \n\n")
 
-        text_struk.insert(END, "----------------------------------------------------------------\n")
+        text_struk.insert(END, "---------------------------------------------------------------\n")
 
         text_struk.insert(END, f"   Subtotal:\t\t\tRp. {int(harga_makanan)+int(harga_minuman)+int(harga_kue)} \n\n")
         text_struk.insert(END, f"   Pajak:\t\t\tRp. {2000} \n\n")
@@ -532,12 +532,15 @@ def mocha():
         root_mocha.set('-')
 
 
+
+#----------------------------------------------------------------------------------------------------------------------
+
 # Bagian tampilan (Frontend)
 a = Tk()
 # Pemberian Title/Judul pada Project
 window_name = a.title('Cashier Management System')
 
-window_size = a.geometry('1270x690+155+55')  # Set ukuran window  (diubah) (
+window_size = a.geometry('1254x690+155+55')  # Set ukuran window  (diubah) (
 
 size_tetap = a.resizable(0, 0)
 
@@ -550,7 +553,7 @@ window_color = a.config(bg='red')  # Set warna windows (diubah)
 topframe = Frame(a, bd=11, relief=RIDGE, bg='red')
 topframe.pack(side=TOP)
 
-project_name = Label(topframe, text='Cashier Management System', font=(
+project_name = Label(topframe, text='CASHIER MANAGEMENT SYSTEM', font=(
     'Times New Roman', 30, 'bold'), bg='blue', fg='white', width=51)  # (diubah)
 project_name.grid(row=0, column=0)
 
@@ -558,33 +561,33 @@ project_name.grid(row=0, column=0)
 
 
 # bisa menambahkan warna background  (bg)
-menuframe = Frame(a, bd=16, relief=RIDGE, bg='firebrick4')
+menuframe = Frame(a, bd=10, relief=RIDGE, bg='firebrick4')
 menuframe.pack(side=LEFT)
 
 # bisa menambahkan warna background  (bg)
-hargaframe = Frame(menuframe, bd=4, relief=RIDGE, bg='firebrick4', pady=10)
+hargaframe = Frame(menuframe, relief=RIDGE, bg='firebrick4', pady=15, bd=12, padx=10)
 hargaframe.pack(side=BOTTOM)
 
 makanan_frame = LabelFrame(menuframe, text='MAKANAN', font=(
-    'Times New Roman', 19, 'bold'), bd=10, relief=RIDGE, fg='black')
+    'Times New Roman', 20, 'bold'), bd=14, relief=RIDGE, fg='black')
 makanan_frame.pack(side=LEFT)
 
 minuman_frame = LabelFrame(menuframe, text='MINUMAN', font=(
-    'Times New Roman', 19, 'bold'), bd=10, relief=RIDGE, fg='black')
+    'Times New Roman', 20, 'bold'), bd=14, relief=RIDGE, fg='black')
 minuman_frame.pack(side=LEFT)
 
 cake_frame = LabelFrame(menuframe, text='KUE', font=(
-    'Times New Roman', 19, 'bold'), bd=10, relief=RIDGE, fg='black')
+    'Times New Roman', 20, 'bold'), bd=14, relief=RIDGE, fg='black')
 cake_frame.pack(side=LEFT)
 
 
 # ------------
-rightframe = Frame(a, bd=15, relief=RIDGE, bg='red4')
+rightframe = Frame(a, bd=10, relief=RIDGE, bg='red4', pady=2)
 rightframe.pack(side=RIGHT)
 
 # Fitur bagian kanan
 
-calculatorframe = Frame(rightframe, bd=1, relief=RIDGE, bg='red4')
+calculatorframe = Frame(rightframe, bd=1, relief=RIDGE, bg='grey')
 calculatorframe.pack()
 
 strukframe = Frame(rightframe, bd=4, relief=RIDGE, bg='red4')
@@ -624,7 +627,7 @@ var25 = IntVar()
 var26 = IntVar()
 var27 = IntVar()
 
-# Makanan
+# Makanan (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
 root_nasgor = StringVar()
 root_martabak = StringVar()
@@ -636,7 +639,7 @@ root_nasbak = StringVar()
 root_nashim = StringVar()
 root_nasput = StringVar()
 
-# Minuman
+# Minuman (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
 root_fanta = StringVar()
 root_cocacola = StringVar()
@@ -648,7 +651,7 @@ root_jusapel = StringVar()
 root_jusdurian = StringVar()
 root_juspisang = StringVar()
 
-# Kue
+# Kue (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
 root_bolu = StringVar()
 root_brownis = StringVar()
@@ -661,9 +664,11 @@ root_cheese = StringVar()
 root_mocha = StringVar()
 
 
+
+
 # Pengisian Jumlah pada Kolom daftar makanan,minuman & cake
 
-# Makanan
+# Makanan   (Revisi ganti menunya, untuk root_ = dibiarin saja)
 root_nasgor.set('-')
 root_martabak.set('-')
 root_sate.set('-')
@@ -675,7 +680,7 @@ root_nashim.set('-')
 root_nasput.set('-')
 
 
-# Minuman
+# Minuman   (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
 root_fanta.set('-')
 root_cocacola.set('-')
@@ -688,7 +693,7 @@ root_jusdurian.set('-')
 root_juspisang.set('-')
 
 
-# Kue
+# Kue   (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
 root_bolu.set('-')
 root_brownis.set('-')
@@ -714,9 +719,10 @@ total_var = StringVar()
 # Daftar MAKANAN
 # sticky digunakan untuk meluruskan daftar makanan/minuman
 
+# mengganti variable dan text sesuai masing" menu
 
 nasgor = Checkbutton(makanan_frame, text='Nasi Goreng', font=('Times New Roman', 18, 'bold'),
-                     onvalue=1, offvalue=0, variable=var1, command=nasgor)  # untuk var disesuaikan dengan Variabelnya
+                     onvalue=1, offvalue=0, variable=var1, command=nasgor)  
 nasgor.grid(row=0, column=0, sticky=W)
 
 martabak = Checkbutton(makanan_frame, text='Martabak', font=(
@@ -751,7 +757,8 @@ nasput = Checkbutton(makanan_frame, text='Nasi Putih', font=(
     'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var9, command=nasput)
 nasput.grid(row=8, column=0, sticky=W)
 
-# ---------------- input jumlah makanan
+
+# ---------------- input jumlah makanan (mengganti variable dan text sesuai masing" menu)
 
 input_nasgor = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_nasgor)
@@ -793,6 +800,8 @@ input_nasput.grid(row=8, column=1)
 
 # Daftar MINUMAN
 
+# mengganti variable dan text sesuai masing" menu
+
 fanta = Checkbutton(minuman_frame, text='Fanta', font=(
     'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var10, command=fanta)
 fanta.grid(row=0, column=0, sticky=W)
@@ -830,7 +839,7 @@ juspisang = Checkbutton(minuman_frame, text='Jus Pisang', font=(
 juspisang.grid(row=8, column=0, sticky=W)
 
 
-# ---------------- input jumlah minuman
+# ---------------- input jumlah minuman (mengganti variable dan text sesuai masing" menu)
 
 input_fanta = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'),
                     bd=7, width=6, state=DISABLED, textvariable=root_fanta)
@@ -871,6 +880,8 @@ input_juspisang.grid(row=8, column=1)
 
 # Daftar CAKE
 
+# mengganti variable dan text sesuai masing" menu
+
 bolu = Checkbutton(cake_frame, text='Bolu Cake', font=(
     'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var19, command=bolu)
 bolu.grid(row=0, column=0, sticky=W)
@@ -908,7 +919,7 @@ mocha = Checkbutton(cake_frame, text='Mocha Cake', font=(
 mocha.grid(row=8, column=0, sticky=W)
 
 
-# ---------------- input jumlah cake
+# ---------------- input jumlah cake (mengganti variable dan text sesuai masing" menu)
 
 input_bolu = Entry(cake_frame, font=('Times New Roman', 18, 'bold'),
                    bd=7, width=6, state=DISABLED, textvariable=root_bolu)
@@ -1017,22 +1028,22 @@ texttotal.grid(row=2, column=3, padx=35)
 # Keterangan = menggunakan variabel tombolframe untuk membuat sebuah tombol
 
 tombol_total = Button(tombolframe, text='Total', font=(
-    'Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=33, command=totalharga)
+    'Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=29, command=totalharga)
 tombol_total.grid(row=0, column=0)
 
 tombol_struk = Button(tombolframe, text='Struk', font=(
-    'Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=32, command=struk)
+    'Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=29, command=struk)
 tombol_struk.grid(row=0, column=1)
 
 tombol_reset = Button(tombolframe, text='Reset', font=(
-    'Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=33, command=reset)
-tombol_reset.grid(row=0, column=4)
+    'Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=29, command=reset)
+tombol_reset.grid(row=0, column=2)
 
 
 # Membuat Tempat untuk hasil Struk
 
 text_struk = Text(strukframe,  font=('Times New Roman', 14,
-                  'bold'), bg='white', fg='black', width=42, height=14)
+                  'bold'), bg='white', fg='black', width=40, height=14)
 text_struk.grid(row=0, column=0)
 
 
@@ -1067,72 +1078,72 @@ def hasil():  # Function untuk menghitung hasil dari kalkulator
 
 
 kalkulatorfield = Entry(calculatorframe, font=(
-    'Times New Roman', 16, 'bold'), width=42)
+    'Times New Roman', 16, 'bold'), width=40)
 kalkulatorfield.grid(row=0, column=0, columnspan=10)
 
 
 tombol1 = Button(calculatorframe, text='1', font=('Times New Roman', 15, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('1'))
+                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('1'))
 tombol1.grid(row=1, column=0)
 
 tombol2 = Button(calculatorframe, text='2', font=('Times New Roman', 15, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('2'))
+                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('2'))
 tombol2.grid(row=1, column=1)
 
 tombol3 = Button(calculatorframe, text='3', font=('Times New Roman', 15, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('3'))
+                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('3'))
 tombol3.grid(row=1, column=2)
 
 tombolplus = Button(calculatorframe, text='+', font=('Times New Roman', 15, 'bold'),
-                    bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('+'))
+                    bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('+'))
 tombolplus.grid(row=1, column=3)
 
 tombol6 = Button(calculatorframe, text='6', font=('Times New Roman', 15, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('6'))
+                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('6'))
 tombol6.grid(row=2, column=0)
 
 tombol5 = Button(calculatorframe, text='5', font=('Times New Roman', 15, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('5'))
+                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('5'))
 tombol5.grid(row=2, column=1)
 
 tombol4 = Button(calculatorframe, text='4', font=('Times New Roman', 15, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('4'))
+                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('4'))
 tombol4.grid(row=2, column=2)
 
 tombolminus = Button(calculatorframe, text='-', font=('Times New Roman', 15, 'bold'),
-                     bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('-'))
+                     bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('-'))
 tombolminus.grid(row=2, column=3)
 
 tombol7 = Button(calculatorframe, text='7', font=('Times New Roman', 15, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('7'))
+                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('7'))
 tombol7.grid(row=3, column=0)
 
 tombol8 = Button(calculatorframe, text='8', font=('Times New Roman', 15, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('8'))
+                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('8'))
 tombol8.grid(row=3, column=1)
 
 tombol9 = Button(calculatorframe, text='9', font=('Times New Roman', 15, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('9'))
+                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('9'))
 tombol9.grid(row=3, column=2)
 
 tombolkali = Button(calculatorframe, text='*', font=('Times New Roman', 15, 'bold'),
-                    bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('*'))
+                    bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('*'))
 tombolkali.grid(row=3, column=3)
 
 tombolhasil = Button(calculatorframe, text='=', font=(
-    'Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=hasil)
+    'Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=5, command=hasil)
 tombolhasil.grid(row=4, column=0)
 
 tombol0 = Button(calculatorframe, text='0', font=('Times New Roman', 15, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('0'))
+                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('0'))
 tombol0.grid(row=4, column=1)
 
 tombolclear = Button(calculatorframe, text='Clear', font=(
-    'Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=6, command=clear)
+    'Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=5, command=clear)
 tombolclear.grid(row=4, column=2)
 
 tombolbagi = Button(calculatorframe, text='/', font=('Times New Roman', 15, 'bold'),
-                    bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('/'))
+                    bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('/'))
 tombolbagi.grid(row=4, column=3)
 
 # ---------------------------------------------------------------------------------------------
