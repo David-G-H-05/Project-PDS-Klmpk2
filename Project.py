@@ -4,70 +4,73 @@ import time
 
 def reset(): 
     text_struk.delete(1.0, END)
-    # Makanan
-    root_nasgor.set('-')
-    root_martabak.set('-')
-    root_sate.set('-')
-    root_kebab.set('-')
-    root_roba.set('-')
-    root_naskun.set('-')
-    root_nasbak.set('-')
-    root_nashim.set('-')
-    root_nasput.set('-')
+#     # SNACK   (Revisi ganti menunya, untuk root_ = dibiarin saja)
+    root_pisgor.set('-')
+    root_nachos.set('-')
+    root_onion.set('-')
+    root_chrispy.set('-')
+    root_mushroom.set('-')
+    root_frech.set('-')
+    root_sandwich.set('-')
+    root_telur.set('-')
+    root_dimsum.set('-')
 
-    # Minuman
 
-    root_fanta.set('-')
-    root_cocacola.set('-')
-    root_sprite.set('-')
-    root_jusmangga.set('-')
-    root_jusjeruk.set('-')
-    root_jusalpukat.set('-')
-    root_jusapel.set('-')
-    root_jusdurian.set('-')
-    root_juspisang.set('-')
+    # DRINK   (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
-    # Kue
+    root_lavamilk.set('-')
+    root_milotsunami.set('-')
+    root_sodaconi.set('-')
+    root_bluetea.set('-')
+    root_blackjack.set('-')
+    root_americano.set('-')
+    root_iceblend.set('-')
+    root_macchiato.set('-')
+    root_juice.set('-')
 
-    root_bolu.set('-')
-    root_brownis.set('-')
-    root_lapiskukus.set('-')
-    root_marble.set('-')
-    root_sponge.set('-')
-    root_butter.set('-')
-    root_cotton.set('-')
-    root_cheese.set('-')
-    root_mocha.set('-')
 
-    input_nasgor.config(state=DISABLED)
-    input_martabak.config(state=DISABLED)
-    input_sate.config(state=DISABLED)
-    input_kebab.config(state=DISABLED)
-    input_roba.config(state=DISABLED)
-    input_naskun.config(state=DISABLED)
-    input_nasbak.config(state=DISABLED)
-    input_nashim.config(state=DISABLED)
-    input_nasput.config(state=DISABLED)
+    # DESSERT   (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
-    input_fanta.config(state=DISABLED)
-    input_cocacola.config(state=DISABLED)
-    input_sprite.config(state=DISABLED)
-    input_jusmangga.config(state=DISABLED)
-    input_jusjeruk.config(state=DISABLED)
-    input_jusalpukat.config(state=DISABLED)
-    input_jusapel.config(state=DISABLED)
-    input_jusdurian.config(state=DISABLED)
-    input_juspisang.config(state=DISABLED)
+    root_brownies.set('-')
+    root_choco.set('-')
+    root_cupcake.set('-')
+    root_pudding.set('-')
+    root_paisusu.set('-')
+    root_muffin.set('-')
+    root_cookies.set('-')
+    root_chocolava.set('-')
+    root_desertbox.set('-')
 
-    input_bolu.config(state=DISABLED)
-    input_brownis.config(state=DISABLED)
-    input_lapiskukus.config(state=DISABLED)
-    input_marble.config(state=DISABLED)
-    input_sponge.config(state=DISABLED)
-    input_butter.config(state=DISABLED)
-    input_cotton.config(state=DISABLED)
-    input_cheese.config(state=DISABLED)
-    input_mocha.config(state=DISABLED)
+    
+    input_pisgor.config(state=DISABLED)
+    input_nachos.config(state=DISABLED)
+    input_onion.config(state=DISABLED)
+    input_chrispy.config(state=DISABLED)
+    input_mushroom.config(state=DISABLED)
+    input_frech.config(state=DISABLED)
+    input_sandwich.config(state=DISABLED)
+    input_telur.config(state=DISABLED)
+    input_dimsum.config(state=DISABLED)
+
+    input_lavamilk.config(state=DISABLED)
+    input_milotsunami.config(state=DISABLED)
+    input_sodaconi.config(state=DISABLED)
+    input_bluetea.config(state=DISABLED)
+    input_blackjack.config(state=DISABLED)
+    input_americano.config(state=DISABLED)
+    input_iceblend.config(state=DISABLED)
+    input_macchiato.config(state=DISABLED)
+    input_juice.config(state=DISABLED)
+
+    input_brownies.config(state=DISABLED)
+    input_choco.config(state=DISABLED)
+    input_cupcake.config(state=DISABLED)
+    input_pudding.config(state=DISABLED)
+    input_paisusu.config(state=DISABLED)
+    input_muffin.config(state=DISABLED)
+    input_cookies.config(state=DISABLED)
+    input_chocolava.config(state=DISABLED)
+    input_desertbox.config(state=DISABLED)
     
 
     var1.set(0)
@@ -84,10 +87,10 @@ def reset():
     var12.set(0)
     var13.set(0)
     var14.set(0)
-    var15.set(0)
     var16.set(0)
-    var17.set(0)
-    var18.set(0)
+    var16.set(0)
+    var16.set(0)
+    var16.set(0)
     var19.set(0)
     var20.set(0)
     var21.set(0)
@@ -98,9 +101,9 @@ def reset():
     var26.set(0)
     var27.set(0)
 
-    makanan_var.set('')
-    minuman_var.set('')
-    cake_var.set('')
+    snack_var.set('')
+    drink_var.set('')
+    dessert_var.set('')
     subtotal_var.set('')
     pajak_var.set('')
     total_var.set('')
@@ -110,7 +113,7 @@ def reset():
 
 
 def struk():
-    if makanan_var!='' or minuman_var!='' or cake_var!='':
+    if snack_var!='' or drink_var!='' or dessert_var!='':
         text_struk.delete(1.0, END)
         x = random.randint(100, 1000)
         tanggal = time.strftime("%d/%m/%Y")  # Memasukkan bagian tanggal
@@ -119,417 +122,389 @@ def struk():
         text_struk.insert(END,tanggal + "\t\t\t         " + jam + '\n')    # jika menggunakan /t maka jarak pisahnya terlalu jauh
         text_struk.insert(END, "---------------------------------------------------------------\n")
         text_struk.insert(END, "  Menu: \t\t" + "\tHarga (Rp)\n\n")
-        if root_nasgor.get() != "-":
-            text_struk.insert(END, f"  Nasi Goreng:\t\t\t {int(root_nasgor.get())*10000} \n\n")
-        if root_martabak.get() != "-":
-            text_struk.insert(END, f"  Martabak:\t\t\t {int(root_martabak.get())*9000} \n\n")
-        if root_sate.get() != "-":
-            text_struk.insert(END, f"  Sate:\t\t\t {int(root_sate.get())*2000} \n\n")
-        if root_kebab.get() != "-":
-            text_struk.insert(END, f"  Kebab:\t\t\t {int(root_kebab.get())*22000} \n\n")
-        if root_roba.get() != "-":
-            text_struk.insert(END, f"  Roba:\t\t\t {int(root_roba.get())*12000} \n\n")
-        if root_naskun.get() != "-":
-            text_struk.insert(END, f"  Nasi Kuning:\t\t\t {int(root_naskun.get())*15000} \n\n")
-        if root_nasbak.get() != "-":
-            text_struk.insert(END, f"  Nasi Bakar:\t\t\t {int(root_nasbak.get())*15000} \n\n")
-        if root_nashim.get() != "-":
-            text_struk.insert(END, f"  Nasi Hilang:\t\t\t {int(root_nashim.get())*15000} \n\n")
-        if root_nasput.get() != "-":
-            text_struk.insert(END, f"  Nasi Putih:\t\t\t {int(root_nasput.get())*15000} \n\n")
+        if root_pisgor.get() != "-":
+            text_struk.insert(END, f"  Pigor Elite:\t\t\t {int(root_pisgor.get())*19000} \n\n")
+        if root_nachos.get() != "-":
+            text_struk.insert(END, f"  Nachos:\t\t\t {int(root_nachos.get())*25000} \n\n")
+        if root_onion.get() != "-":
+            text_struk.insert(END, f"  Onion Ring:\t\t\t {int(root_onion.get())*15000} \n\n")
+        if root_chrispy.get() != "-":
+            text_struk.insert(END, f"  Chrispy Chicken Ball:\t\t\t {int(root_chrispy.get())*20000} \n\n")
+        if root_mushroom.get() != "-":
+            text_struk.insert(END, f"  Mushroom Chrispy:\t\t\t {int(root_mushroom.get())*25000} \n\n")
+        if root_frech.get() != "-":
+            text_struk.insert(END, f"  Frech Fries Big Size:\t\t\t {int(root_frech.get())*15000} \n\n")
+        if root_sandwich.get() != "-":
+            text_struk.insert(END, f"  Sandwich 3pcs:\t\t\t {int(root_sandwich.get())*15000} \n\n")
+        if root_telur.get() != "-":
+            text_struk.insert(END, f"  Telur Gulung 10pcs:\t\t\t {int(root_telur.get())*15000} \n\n")
+        if root_dimsum.get() != "-":
+            text_struk.insert(END, f"  Dimsum:\t\t\t {int(root_dimsum.get())*12000} \n\n")
 
-        if root_fanta.get() != "-":
-            text_struk.insert(END, f"  Fanta:\t\t\t {int(root_fanta.get())*5000} \n\n")
-        if root_cocacola.get() != "-":
-            text_struk.insert(END, f"  Coca Cola:\t\t\t {int(root_cocacola.get())*5000} \n\n")
-        if root_sprite.get() != "-":
-            text_struk.insert(END, f"  Sprite:\t\t\t {int(root_sprite.get())*5000} \n\n")
-        if root_jusmangga.get() != "-":
-            text_struk.insert(END, f"  Jus Mangga:\t\t\t {int(root_jusmangga.get())*5000} \n\n")
-        if root_jusjeruk.get() != "-":
-            text_struk.insert(END, f"  Jus Jeruk:\t\t\t {int(root_jusjeruk.get())*8500} \n\n")
-        if root_jusalpukat.get() != "-":
-            text_struk.insert(END, f"  Jus Alpukat:\t\t\t {int(root_jusalpukat.get())*5500} \n\n")
-        if root_jusapel.get() != "-":
-            text_struk.insert(END, f"  Jus Apel:\t\t\t {int(root_jusapel.get())*7500} \n\n")
-        if root_jusdurian.get() != "-":
-            text_struk.insert(END, f"  Jus Durian:\t\t\t {int(root_jusdurian.get())*13000} \n\n")
-        if root_juspisang.get() != "-":
-            text_struk.insert(END, f"  Jus Pisang:\t\t\t {int(root_juspisang.get())*13000} \n\n")
+        if root_lavamilk.get() != "-":
+            text_struk.insert(END, f"  Lavamilk:\t\t\t {int(root_lavamilk.get())*15000} \n\n")
+        if root_milotsunami.get() != "-":
+            text_struk.insert(END, f"  Milo Tsunami:\t\t\t {int(root_milotsunami.get())*15000} \n\n")
+        if root_sodaconi.get() != "-":
+            text_struk.insert(END, f"  Soda Coni:\t\t\t {int(root_sodaconi.get())*17000} \n\n")
+        if root_bluetea.get() != "-":
+            text_struk.insert(END, f"  Blue Ocean Tea:\t\t\t {int(root_bluetea.get())*19000} \n\n")
+        if root_blackjack.get() != "-":
+            text_struk.insert(END, f"  Black Jack Coffe:\t\t\t {int(root_blackjack.get())*20000} \n\n")
+        if root_americano.get() != "-":
+            text_struk.insert(END, f"  Americano:\t\t\t {int(root_americano.get())*20000} \n\n")
+        if root_iceblend.get() != "-":
+            text_struk.insert(END, f"  Ice Blend Coffe:\t\t\t {int(root_iceblend.get())*17000} \n\n")
+        if root_macchiato.get() != "-":
+            text_struk.insert(END, f"  Macchiato:\t\t\t {int(root_macchiato.get())*25000} \n\n")
+        if root_juice.get() != "-":
+            text_struk.insert(END, f"  Juice:\t\t\t {int(root_juice.get())*12000} \n\n")
 
-        if root_bolu.get() != "-":
-            text_struk.insert(END, f"  Bolu:\t\t\t {int(root_bolu.get())*4000} \n\n")
-        if root_brownis.get() != "-":
-            text_struk.insert(END, f"  Brownis:\t\t\t {int(root_brownis.get())*5500} \n\n")
-        if root_lapiskukus.get() != "-":
-            text_struk.insert(END, f"  Lapis Kukus:\t\t\t {int(root_lapiskukus.get())*11000} \n\n")
-        if root_marble.get() != "-":
-            text_struk.insert(END, f"  Marble Cake:\t\t\t {int(root_marble.get())*24000} \n\n")
-        if root_sponge.get() != "-":
-            text_struk.insert(END, f"  Sponge Cake:\t\t\t {int(root_sponge.get())*12500} \n\n")
-        if root_butter.get() != "-":
-            text_struk.insert(END, f"  Butter Cake:\t\t\t {int(root_butter.get())*5000} \n\n")
-        if root_cotton.get() != "-":
-            text_struk.insert(END, f"  Cotton Cake:\t\t\t {int(root_cotton.get())*20000} \n\n")
-        if root_cheese.get() != "-":
-            text_struk.insert(END, f"  Cheese Cake:\t\t\t {int(root_cheese.get())*6000} \n\n")
-        if root_mocha.get() != "-":
-            text_struk.insert(END, f"  Mocha Cake:\t\t\t {int(root_mocha.get())*3000} \n\n")
-
-        text_struk.insert(END, "---------------------------------------------------------------\n")
-        if harga_makanan != "-":
-            text_struk.insert(END, f"  Total Harga Makanan:\t\t\tRp. {harga_makanan} \n\n")
-        if  harga_minuman != "-":
-            text_struk.insert(END, f"  Total Harga Minuman:\t\t\tRp. {harga_minuman} \n\n")
-        if harga_kue != "-":
-            text_struk.insert(END, f"  Total Harga Cake:\t\t\tRp. {harga_kue} \n\n")
+        if root_brownies.get() != "-":
+            text_struk.insert(END, f"  Brownies:\t\t\t {int(root_brownies.get())*14500} \n\n")
+        if root_choco.get() != "-":
+            text_struk.insert(END, f"  Choco Oreo Cake:\t\t\t {int(root_choco.get())*12000} \n\n")
+        if root_cupcake.get() != "-":
+            text_struk.insert(END, f"  Cupcake:\t\t\t {int(root_cupcake.get())*7000} \n\n")
+        if root_pudding.get() != "-":
+            text_struk.insert(END, f"  Pudding:\t\t\t {int(root_pudding.get())*7000} \n\n")
+        if root_paisusu.get() != "-":
+            text_struk.insert(END, f"  Pai Susu:\t\t\t {int(root_paisusu.get())*5000} \n\n")
+        if root_muffin.get() != "-":
+            text_struk.insert(END, f"  Muffin:\t\t\t {int(root_muffin.get())*8000} \n\n")
+        if root_cookies.get() != "-":
+            text_struk.insert(END, f"  Cookies:\t\t\t {int(root_cookies.get())*5000} \n\n")
+        if root_chocolava.get() != "-":
+            text_struk.insert(END, f"  Choco Lava:\t\t\t {int(root_chocolava.get())*15000} \n\n")
+        if root_desertbox.get() != "-":
+            text_struk.insert(END, f"  Dessert Box:\t\t\t {int(root_desertbox.get())*20000} \n\n")
 
         text_struk.insert(END, "---------------------------------------------------------------\n")
+        if harga_snack != "-":
+            text_struk.insert(END, f"  Total Harga Snack:\t\t\tRp. {harga_snack} \n\n")
+        if  harga_drink != "-":
+            text_struk.insert(END, f"  Total Harga Drink:\t\t\tRp. {harga_drink} \n\n")
+        if harga_dessert != "-":
+            text_struk.insert(END, f"  Total Harga Dessert:\t\t\tRp. {harga_dessert} \n\n")
 
-        text_struk.insert(END, f"   Subtotal:\t\t\tRp. {int(harga_makanan)+int(harga_minuman)+int(harga_kue)} \n\n")
+        text_struk.insert(END, "---------------------------------------------------------------\n")
+
+        text_struk.insert(END, f"   Subtotal:\t\t\tRp. {int(harga_snack)+int(harga_drink)+int(harga_dessert)} \n\n")
         text_struk.insert(END, f"   Pajak:\t\t\tRp. {2000} \n\n")
-        text_struk.insert(END, f"   Total:\t\t\tRp. {int(harga_makanan)+int(harga_minuman)+int(harga_kue)+2000} \n\n")
+        text_struk.insert(END, f"   Total:\t\t\tRp. {int(harga_snack)+int(harga_drink)+int(harga_dessert)+2000} \n\n")
 
 
 
 
 # Funtion untuk menghitung total harga
 def totalharga():
-    global harga_makanan,harga_minuman, harga_kue
+    global harga_snack,harga_drink, harga_dessert
     # replace berguna untuk mengganti string
-    item1 = int(root_nasgor.get().replace('-', '0'))
-    item2 = int(root_martabak.get().replace('-', '0'))
-    item3 = int(root_sate.get().replace('-', '0'))
-    item4 = int(root_kebab.get().replace('-', '0'))
-    item5 = int(root_roba.get().replace('-', '0'))
-    item6 = int(root_naskun.get().replace('-', '0'))
-    item7 = int(root_nasbak.get().replace('-', '0'))
-    item8 = int(root_nashim.get().replace('-', '0'))
-    item9 = int(root_nasput.get().replace('-', '0'))
+    item1 = int(root_pisgor.get().replace("-", "0"))
+    item2 = int(root_nachos.get().replace("-", "0"))
+    item3 = int(root_onion.get().replace("-", "0"))
+    item4 = int(root_chrispy.get().replace("-", "0"))
+    item5 = int(root_mushroom.get().replace("-", "0"))
+    item6 = int(root_frech.get().replace("-", "0"))
+    item7 = int(root_sandwich.get().replace("-", "0"))
+    item8 = int(root_telur.get().replace('-', '0'))
+    item9 = int(root_dimsum.get().replace('-', '0'))
 
-    item10 = int(root_fanta.get().replace('-', '0'))
-    item11 = int(root_cocacola.get().replace('-', '0'))
-    item12 = int(root_sprite.get().replace('-', '0'))
-    item13 = int(root_jusmangga.get().replace('-', '0'))
-    item14 = int(root_jusjeruk.get().replace('-', '0'))
-    item15 = int(root_jusalpukat.get().replace('-', '0'))
-    item16 = int(root_jusapel.get().replace('-', '0'))
-    item17 = int(root_jusdurian.get().replace('-', '0'))
-    item18 = int(root_juspisang.get().replace('-', '0'))
+    item10 = int(root_lavamilk.get().replace('-', '0'))
+    item11 = int(root_milotsunami.get().replace('-', '0'))
+    item12 = int(root_sodaconi.get().replace('-', '0'))
+    item13 = int(root_bluetea.get().replace('-', '0'))
+    item14 = int(root_blackjack.get().replace('-', '0'))
+    item15 = int(root_americano.get().replace('-', '0'))
+    item16 = int(root_iceblend.get().replace('-', '0'))
+    item17 = int(root_macchiato.get().replace('-', '0'))
+    item18 = int(root_juice.get().replace('-', '0'))
 
-    item19 = int(root_bolu.get().replace('-', '0'))
-    item20 = int(root_brownis.get().replace('-', '0'))
-    item21 = int(root_lapiskukus.get().replace('-', '0'))
-    item22 = int(root_marble.get().replace('-', '0'))
-    item23 = int(root_sponge.get().replace('-', '0'))
-    item24 = int(root_butter.get().replace('-', '0'))
-    item25 = int(root_cotton.get().replace('-', '0'))
-    item26 = int(root_cheese.get().replace('-', '0'))
-    item27 = int(root_mocha.get().replace('-', '0'))
+    item19 = int(root_brownies.get().replace('-', '0'))
+    item20 = int(root_choco.get().replace('-', '0'))
+    item21 = int(root_cupcake.get().replace('-', '0'))
+    item22 = int(root_pudding.get().replace('-', '0'))
+    item23 = int(root_paisusu.get().replace('-', '0'))
+    item24 = int(root_muffin.get().replace('-', '0'))
+    item25 = int(root_cookies.get().replace('-', '0'))
+    item26 = int(root_chocolava.get().replace('-', '0'))
+    item27 = int(root_desertbox.get().replace('-', '0'))
 
-    # Macam-Macam harga pada menu makanan,minuman, & kue
+    # Pemberian harga
 
-    harga_makanan = (item1*10000) + (item2*9000) + (item3*2000) + (item4*22000) + \
-        (item5*12000) + (item6*15000) + \
-        (item7*15000) + (item8*15000) + (item9*15000)
+    harga_snack = (item1*19000) + (item2*25000) + (item3*15000) + (item4*20000) + \
+         (item5*25000) + (item6*15000) + (item7*15000) + (item8*15000) + (item9*12000)
 
-    harga_minuman = (item10*5000) + (item11*5000) + (item12*5000) + (item13*5000) + \
-        (item14*8500) + (item15*5500) + \
-        (item16*7500) + (item17*13000) + (item18*9500)
+    harga_drink = (item10*15000) + (item11*15000) + (item12*17000) + (item13*19000) + \
+        (item14*20000) + (item15*20000) + (item16*17000) + (item17*25000) + (item18*12000)
 
-    harga_kue = (item19*4000) + (item20*5500) + (item21*11000) + (item22*24000) + \
-        (item23*12500) + (item24*5000) + \
-        (item25*20000) + (item26*6000) + (item27*3000)
+    harga_dessert = (item19*14500) + (item20*12000) + (item21*7000) + (item22*7000) + \
+        (item23*5000) + (item24*8000) + (item25*5000) + (item26*15000) + (item27*20000)
 
-    makanan_var.set('Rp. '+ str(harga_makanan))
-    minuman_var.set('Rp. '+ str(harga_minuman))
-    cake_var.set('Rp. '+ str(harga_kue))
+    snack_var.set('Rp. '+ str(harga_snack))
+    drink_var.set('Rp. '+ str(harga_drink))
+    dessert_var.set('Rp. '+ str(harga_dessert))
 
-    subtotal = harga_makanan + harga_minuman + harga_kue
+    subtotal = harga_snack + harga_drink + harga_dessert
     subtotal_var.set('Rp. '+ str(subtotal))
 
-    pajak_var.set("Rp. 2000")  # pajak adalah 2% dari total harga
+    pajak_var.set('Rp. 2000')
 
-    total = subtotal + 2000  # total harga adalah subtotal + pajak
+    total = subtotal + 2000
     total_var.set('Rp. '+ str(total))
 
 
 # Function untuk Menu Makanan
 
-def nasgor():
+def pisgor():
     if var1.get() == 1:
-        input_nasgor.config(state=NORMAL)
-        # yang berguna saat di ceklis tanda min akan hilang
-        input_nasgor.delete(0, END)
-        input_nasgor.focus()
+        input_pisgor.config(state=NORMAL)
+        input_pisgor.delete(0, END)
+        input_pisgor.focus()
     else:
-        input_nasgor.config(state=DISABLED)
-        # jika saat ceklis dihilangkan makan akan kembali seperti semula
-        root_nasgor.set('-')
+        input_pisgor.config(state=DISABLED)
+        root_pisgor.set('-')
 
-
-def martabak():
+def nachos():
     if var2.get() == 1:
-        input_martabak.config(state=NORMAL)
-        input_martabak.delete(0, END)
-        input_martabak.focus()
+        input_nachos.config(state=NORMAL)
+        input_nachos.delete(0, END)
+        input_nachos.focus()
     else:
-        input_martabak.config(state=DISABLED)
-        root_martabak.set('-')
+        input_nachos.config(state=DISABLED)
+        root_nachos.set('-')
 
-
-def sate():
+def onion():
     if var3.get() == 1:
-        input_sate.config(state=NORMAL)
-        input_sate.delete(0, END)
-        input_sate.focus()
+        input_onion.config(state=NORMAL)
+        input_onion.delete(0, END)
+        input_onion.focus()
     else:
-        input_sate.config(state=DISABLED)
-        root_sate.set('-')
+        input_onion.config(state=DISABLED)
+        root_onion.set('-')
 
-
-def kebab():
+def chrispy():
     if var4.get() == 1:
-        input_kebab.config(state=NORMAL)
-        input_kebab.delete(0, END)
-        input_kebab.focus()
+        input_chrispy.config(state=NORMAL)
+        input_chrispy.delete(0, END)
+        input_chrispy.focus()
     else:
-        input_kebab.config(state=DISABLED)
-        root_kebab.set('-')
+        input_chrispy.config(state=DISABLED)
+        root_chrispy.set('-')
 
-
-def roba():
+def mushroom():
     if var5.get() == 1:
-        input_roba.config(state=NORMAL)
-        input_roba.delete(0, END)
-        input_roba.focus()
+        input_mushroom.config(state=NORMAL)
+        input_mushroom.delete(0, END)
+        input_mushroom.focus()
     else:
-        input_roba.config(state=DISABLED)
-        root_roba.set('-')
+        input_mushroom.config(state=DISABLED)
+        root_mushroom.set('-')
 
-
-def naskun():
+def frech():
     if var6.get() == 1:
-        input_naskun.config(state=NORMAL)
-        input_naskun.delete(0, END)
-        input_naskun.focus()
+        input_frech.config(state=NORMAL)
+        input_frech.delete(0, END)
+        input_frech.focus()
     else:
-        input_naskun.config(state=DISABLED)
-        root_naskun.set('-')
+        input_frech.config(state=DISABLED)
+        root_frech.set('-')
 
-
-def nasbak():
+def sandwich():
     if var7.get() == 1:
-        input_nasbak.config(state=NORMAL)
-        input_nasbak.delete(0, END)
-        input_nasbak.focus()
+        input_sandwich.config(state=NORMAL)
+        input_sandwich.delete(0, END)
+        input_sandwich.focus()
     else:
-        input_nasbak.config(state=DISABLED)
-        root_nasbak.set('-')
+        input_sandwich.config(state=DISABLED)
+        root_sandwich.set('-')
 
-
-def nashim():
+def telur():
     if var8.get() == 1:
-        input_nashim.config(state=NORMAL)
-        input_nashim.delete(0, END)
-        input_nashim.focus()
+        input_telur.config(state=NORMAL)
+        input_telur.delete(0, END)
+        input_telur.focus()
     else:
-        input_nashim.config(state=DISABLED)
-        root_nashim.set('-')
+        input_telur.config(state=DISABLED)
+        root_telur.set('-')
 
-
-def nasput():
+def dimsum():
     if var9.get() == 1:
-        input_nasput.config(state=NORMAL)
-        input_nasput.delete(0, END)
-        input_nasput.focus()
+        input_dimsum.config(state=NORMAL)
+        input_dimsum.delete(0, END)
+        input_dimsum.focus()
     else:
-        input_nasput.config(state=DISABLED)
-        root_nasput.set('-')
+        input_dimsum.config(state=DISABLED)
+        root_dimsum.set('-')
 
 
-# Function untuk Menu Minuman
-
-def fanta():
+def lavamilk():
     if var10.get() == 1:
-        input_fanta.config(state=NORMAL)
-        input_fanta.delete(0, END)
-        input_fanta.focus()
+        input_lavamilk.config(state=NORMAL)
+        input_lavamilk.delete(0, END)
+        input_lavamilk.focus()
     else:
-        input_fanta.config(state=DISABLED)
-        root_fanta.set('-')
+        input_lavamilk.config(state=DISABLED)
+        root_lavamilk.set('-')
 
-
-def cocacola():
+def milotsunami():
     if var11.get() == 1:
-        input_cocacola.config(state=NORMAL)
-        input_cocacola.delete(0, END)
-        input_cocacola.focus()
+        input_milotsunami.config(state=NORMAL)
+        input_milotsunami.delete(0, END)
+        input_milotsunami.focus()
     else:
-        input_cocacola.config(state=DISABLED)
-        root_cocacola.set('-')
+        input_milotsunami.config(state=DISABLED)
+        root_milotsunami.set('-')
 
-
-def sprite():
+def sodaconi():
     if var12.get() == 1:
-        input_sprite.config(state=NORMAL)
-        input_sprite.delete(0, END)
-        input_sprite.focus()
+        input_sodaconi.config(state=NORMAL)
+        input_sodaconi.delete(0, END)
+        input_sodaconi.focus()
     else:
-        input_sprite.config(state=DISABLED)
-        root_sprite.set('-')
+        input_sodaconi.config(state=DISABLED)
+        root_sodaconi.set('-')
 
-
-def jusmangga():
+def bluetea():
     if var13.get() == 1:
-        input_jusmangga.config(state=NORMAL)
-        input_jusmangga.delete(0, END)
-        input_jusmangga.focus()
+        input_bluetea.config(state=NORMAL)
+        input_bluetea.delete(0, END)
+        input_bluetea.focus()
     else:
-        input_jusmangga.config(state=DISABLED)
-        root_jusmangga.set('-')
+        input_bluetea.config(state=DISABLED)
+        root_bluetea.set('-')
 
-
-def jusjeruk():
+def blackjack():
     if var14.get() == 1:
-        input_jusjeruk.config(state=NORMAL)
-        input_jusjeruk.delete(0, END)
-        input_jusjeruk.focus()
+        input_blackjack.config(state=NORMAL)
+        input_blackjack.delete(0, END)
+        input_blackjack.focus()
     else:
-        input_jusjeruk.config(state=DISABLED)
-        root_jusjeruk.set('-')
+        input_blackjack.config(state=DISABLED)
+        root_blackjack.set('-')
 
-
-def jusalpukat():
+def americano():
     if var15.get() == 1:
-        input_jusalpukat.config(state=NORMAL)
-        input_jusalpukat.delete(0, END)
-        input_jusalpukat.focus()
+        input_americano.config(state=NORMAL)
+        input_americano.delete(0, END)
+        input_americano.focus()
     else:
-        input_jusalpukat.config(state=DISABLED)
-        root_jusalpukat.set('-')
+        input_americano.config(state=DISABLED)
+        root_americano.set('-')
 
-
-def jusapel():
+def iceblend():
     if var16.get() == 1:
-        input_jusapel.config(state=NORMAL)
-        input_jusapel.delete(0, END)
-        input_jusapel.focus()
+        input_iceblend.config(state=NORMAL)
+        input_iceblend.delete(0, END)
+        input_iceblend.focus()
     else:
-        input_jusapel.config(state=DISABLED)
-        root_jusapel.set('-')
+        input_iceblend.config(state=DISABLED)
+        root_iceblend.set('-')
 
-
-def jusdurian():
+def macchiato():
     if var17.get() == 1:
-        input_jusdurian.config(state=NORMAL)
-        input_jusdurian.delete(0, END)
-        input_jusdurian.focus()
+        input_macchiato.config(state=NORMAL)
+        input_macchiato.delete(0, END)
+        input_macchiato.focus()
     else:
-        input_jusdurian.config(state=DISABLED)
-        root_jusdurian.set('-')
+        input_macchiato.config(state=DISABLED)
+        root_macchiato.set('-')
 
-
-def juspisang():
+def juice():
     if var18.get() == 1:
-        input_juspisang.config(state=NORMAL)
-        input_juspisang.delete(0, END)
-        input_juspisang.focus()
+        input_juice.config(state=NORMAL)
+        input_juice.delete(0, END)
+        input_juice.focus()
     else:
-        input_juspisang.config(state=DISABLED)
-        root_juspisang.set('-')
+        input_juice.config(state=DISABLED)
+        root_juice.set('-')
 
 
-# Function untuk Menu Kue
 
-def bolu():
+def brownies():
     if var19.get() == 1:
-        input_bolu.config(state=NORMAL)
-        input_bolu.delete(0, END)
-        input_bolu.focus()
+        input_brownies.config(state=NORMAL)
+        input_brownies.delete(0, END)
+        input_brownies.focus()
     else:
-        input_bolu.config(state=DISABLED)
-        root_bolu.set('-')
+        input_brownies.config(state=DISABLED)
+        root_brownies.set('-')
 
-
-def brownis():
+def choco():
     if var20.get() == 1:
-        input_brownis.config(state=NORMAL)
-        input_brownis.delete(0, END)
-        input_brownis.focus()
+        input_choco.config(state=NORMAL)
+        input_choco.delete(0, END)
+        input_choco.focus()
     else:
-        input_brownis.config(state=DISABLED)
-        root_brownis.set('-')
+        input_choco.config(state=DISABLED)
+        root_choco.set('-')
 
-
-def lapiskukus():
+def cupcake():
     if var21.get() == 1:
-        input_lapiskukus.config(state=NORMAL)
-        input_lapiskukus.delete(0, END)
-        input_lapiskukus.focus()
+        input_cupcake.config(state=NORMAL)
+        input_cupcake.delete(0, END)
+        input_cupcake.focus()
     else:
-        input_lapiskukus.config(state=DISABLED)
-        root_lapiskukus.set('-')
+        input_cupcake.config(state=DISABLED)
+        root_cupcake.set('-')
 
-
-def marble():
+def pudding():
     if var22.get() == 1:
-        input_marble.config(state=NORMAL)
-        input_marble.delete(0, END)
-        input_marble.focus()
+        input_pudding.config(state=NORMAL)
+        input_pudding.delete(0, END)
+        input_pudding.focus()
     else:
-        input_marble.config(state=DISABLED)
-        root_marble.set('-')
+        input_pudding.config(state=DISABLED)
+        root_pudding.set('-')
 
-
-def sponge():
+def paisusu():
     if var23.get() == 1:
-        input_sponge.config(state=NORMAL)
-        input_sponge.delete(0, END)
-        input_sponge.focus()
+        input_paisusu.config(state=NORMAL)
+        input_paisusu.delete(0, END)
+        input_paisusu.focus()
     else:
-        input_sponge.config(state=DISABLED)
-        root_sponge.set('-')
+        input_paisusu.config(state=DISABLED)
+        root_paisusu.set('-')
 
-
-def butter():
+def muffin():
     if var24.get() == 1:
-        input_butter.config(state=NORMAL)
-        input_butter.delete(0, END)
-        input_butter.focus()
+        input_muffin.config(state=NORMAL)
+        input_muffin.delete(0, END)
+        input_muffin.focus()
     else:
-        input_butter.config(state=DISABLED)
-        root_butter.set('-')
+        input_muffin.config(state=DISABLED)
+        root_muffin.set('-')
 
-
-def cotton():
+def cookies():
     if var25.get() == 1:
-        input_cotton.config(state=NORMAL)
-        input_cotton.delete(0, END)
-        input_cotton.focus()
+        input_cookies.config(state=NORMAL)
+        input_cookies.delete(0, END)
+        input_cookies.focus()
     else:
-        input_cotton.config(state=DISABLED)
-        root_cotton.set('-')
+        input_cookies.config(state=DISABLED)
+        root_cookies.set('-')
 
-
-def cheese():
+def chocolava():
     if var26.get() == 1:
-        input_cheese.config(state=NORMAL)
-        input_cheese.delete(0, END)
-        input_cheese.focus()
+        input_chocolava.config(state=NORMAL)
+        input_chocolava.delete(0, END)
+        input_chocolava.focus()
     else:
-        input_cheese.config(state=DISABLED)
-        root_cheese.set('-')
+        input_chocolava.config(state=DISABLED)
+        root_chocolava.set('-')
 
-
-def mocha():
+def desertbox():
     if var27.get() == 1:
-        input_mocha.config(state=NORMAL)
-        input_mocha.delete(0, END)
-        input_mocha.focus()
+        input_desertbox.config(state=NORMAL)
+        input_desertbox.delete(0, END)
+        input_desertbox.focus()
     else:
-        input_mocha.config(state=DISABLED)
-        root_mocha.set('-')
+        input_desertbox.config(state=DISABLED)
+        root_desertbox.set('-')
+
+
+
+
 
 
 
@@ -540,7 +515,7 @@ a = Tk()
 # Pemberian Title/Judul pada Project
 window_name = a.title('Cashier Management System')
 
-window_size = a.geometry('1254x690+155+55')  # Set ukuran window  (diubah) (
+window_size = a.geometry('1350x690+100+55')  # Set ukuran window  (diubah) (
 
 size_tetap = a.resizable(0, 0)
 
@@ -554,31 +529,31 @@ topframe = Frame(a, bd=11, relief=RIDGE, bg='red')
 topframe.pack(side=TOP)
 
 project_name = Label(topframe, text='CASHIER MANAGEMENT SYSTEM', font=(
-    'Times New Roman', 30, 'bold'), bg='blue', fg='white', width=51)  # (diubah)
+    'Times New Roman', 30, 'bold'), bg='blue', fg='white', width=55)  # (diubah)
 project_name.grid(row=0, column=0)
 
 # Frame
 
 
 # bisa menambahkan warna background  (bg)
-menuframe = Frame(a, bd=10, relief=RIDGE, bg='firebrick4')
+menuframe = Frame(a, bd=16, relief=RIDGE, bg='firebrick4')
 menuframe.pack(side=LEFT)
 
 # bisa menambahkan warna background  (bg)
-hargaframe = Frame(menuframe, relief=RIDGE, bg='firebrick4', pady=15, bd=12, padx=10)
+hargaframe = Frame(menuframe, relief=RIDGE, bg='firebrick4', pady=22, bd=9, padx=62)
 hargaframe.pack(side=BOTTOM)
 
-makanan_frame = LabelFrame(menuframe, text='MAKANAN', font=(
-    'Times New Roman', 20, 'bold'), bd=14, relief=RIDGE, fg='black')
-makanan_frame.pack(side=LEFT)
+snack_frame = LabelFrame(menuframe, text='SNACK', font=(
+    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black')
+snack_frame.pack(side=LEFT)
 
-minuman_frame = LabelFrame(menuframe, text='MINUMAN', font=(
-    'Times New Roman', 20, 'bold'), bd=14, relief=RIDGE, fg='black')
-minuman_frame.pack(side=LEFT)
+drink_frame = LabelFrame(menuframe, text='DRINK', font=(
+    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black')
+drink_frame.pack(side=LEFT)
 
-cake_frame = LabelFrame(menuframe, text='KUE', font=(
-    'Times New Roman', 20, 'bold'), bd=14, relief=RIDGE, fg='black')
-cake_frame.pack(side=LEFT)
+dessert_frame = LabelFrame(menuframe, text='DESSERT', font=(
+    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black')
+dessert_frame.pack(side=LEFT)
 
 
 # ------------
@@ -601,7 +576,6 @@ tombolframe.pack()
 var1 = IntVar()
 var2 = IntVar()
 var3 = IntVar()
-var4 = IntVar()
 var4 = IntVar()
 var5 = IntVar()
 var6 = IntVar()
@@ -627,335 +601,331 @@ var25 = IntVar()
 var26 = IntVar()
 var27 = IntVar()
 
-# Makanan (Revisi ganti menunya, untuk root_ = dibiarin saja)
+# SNACK (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
-root_nasgor = StringVar()
-root_martabak = StringVar()
-root_sate = StringVar()
-root_kebab = StringVar()
-root_roba = StringVar()
-root_naskun = StringVar()
-root_nasbak = StringVar()
-root_nashim = StringVar()
-root_nasput = StringVar()
+root_pisgor = StringVar()
+root_nachos = StringVar()
+root_onion = StringVar()
+root_chrispy = StringVar()
+root_mushroom = StringVar()
+root_frech = StringVar()
+root_sandwich = StringVar()
+root_telur = StringVar()
+root_dimsum = StringVar()
 
-# Minuman (Revisi ganti menunya, untuk root_ = dibiarin saja)
+# DRINK (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
-root_fanta = StringVar()
-root_cocacola = StringVar()
-root_sprite = StringVar()
-root_jusmangga = StringVar()
-root_jusjeruk = StringVar()
-root_jusalpukat = StringVar()
-root_jusapel = StringVar()
-root_jusdurian = StringVar()
-root_juspisang = StringVar()
+root_lavamilk = StringVar()
+root_milotsunami = StringVar()
+root_sodaconi = StringVar()
+root_bluetea = StringVar()
+root_blackjack = StringVar()
+root_americano = StringVar()
+root_iceblend = StringVar()
+root_macchiato = StringVar()
+root_juice = StringVar()
 
-# Kue (Revisi ganti menunya, untuk root_ = dibiarin saja)
+# DESSERT (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
-root_bolu = StringVar()
-root_brownis = StringVar()
-root_lapiskukus = StringVar()
-root_marble = StringVar()
-root_sponge = StringVar()
-root_butter = StringVar()
-root_cotton = StringVar()
-root_cheese = StringVar()
-root_mocha = StringVar()
-
-
+root_brownies = StringVar()
+root_choco = StringVar()
+root_cupcake = StringVar()
+root_pudding = StringVar()
+root_paisusu = StringVar()
+root_muffin = StringVar()
+root_cookies = StringVar()
+root_chocolava = StringVar()
+root_desertbox = StringVar()
 
 
 # Pengisian Jumlah pada Kolom daftar makanan,minuman & cake
 
-# Makanan   (Revisi ganti menunya, untuk root_ = dibiarin saja)
-root_nasgor.set('-')
-root_martabak.set('-')
-root_sate.set('-')
-root_kebab.set('-')
-root_roba.set('-')
-root_naskun.set('-')
-root_nasbak.set('-')
-root_nashim.set('-')
-root_nasput.set('-')
+# SNACK   (Revisi ganti menunya, untuk root_ = dibiarin saja)
+root_pisgor.set('-')
+root_nachos.set('-')
+root_onion.set('-')
+root_chrispy.set('-')
+root_mushroom.set('-')
+root_frech.set('-')
+root_sandwich.set('-')
+root_telur.set('-')
+root_dimsum.set('-')
 
 
-# Minuman   (Revisi ganti menunya, untuk root_ = dibiarin saja)
+# DRINK   (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
-root_fanta.set('-')
-root_cocacola.set('-')
-root_sprite.set('-')
-root_jusmangga.set('-')
-root_jusjeruk.set('-')
-root_jusalpukat.set('-')
-root_jusapel.set('-')
-root_jusdurian.set('-')
-root_juspisang.set('-')
+root_lavamilk.set('-')
+root_milotsunami.set('-')
+root_sodaconi.set('-')
+root_bluetea.set('-')
+root_blackjack.set('-')
+root_americano.set('-')
+root_iceblend.set('-')
+root_macchiato.set('-')
+root_juice.set('-')
 
 
-# Kue   (Revisi ganti menunya, untuk root_ = dibiarin saja)
+# DESSERT   (Revisi ganti menunya, untuk root_ = dibiarin saja)
 
-root_bolu.set('-')
-root_brownis.set('-')
-root_lapiskukus.set('-')
-root_marble.set('-')
-root_sponge.set('-')
-root_butter.set('-')
-root_cotton.set('-')
-root_cheese.set('-')
-root_mocha.set('-')
+root_brownies.set('-')
+root_choco.set('-')
+root_cupcake.set('-')
+root_pudding.set('-')
+root_paisusu.set('-')
+root_muffin.set('-')
+root_cookies.set('-')
+root_chocolava.set('-')
+root_desertbox.set('-')
 
 # Harga Frame
 
-makanan_var = StringVar()
-minuman_var = StringVar()
-cake_var = StringVar()
+snack_var = StringVar()
+drink_var = StringVar()
+dessert_var = StringVar()
 subtotal_var = StringVar()
 pajak_var = StringVar()
 total_var = StringVar()
 
 # ---------------------------------------------
 
-# Daftar MAKANAN
-# sticky digunakan untuk meluruskan daftar makanan/minuman
+# Daftar SNACK
 
-# mengganti variable dan text sesuai masing" menu
 
-nasgor = Checkbutton(makanan_frame, text='Nasi Goreng', font=('Times New Roman', 18, 'bold'),
-                     onvalue=1, offvalue=0, variable=var1, command=nasgor)  
-nasgor.grid(row=0, column=0, sticky=W)
+pisgor = Checkbutton(snack_frame, text='Pisgor Elite', font=('Times New Roman', 16, 'bold'),
+             onvalue=1, offvalue=0, variable=var1, command=pisgor)  
+pisgor.grid(row=0, column=0, sticky=W)
 
-martabak = Checkbutton(makanan_frame, text='Martabak', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var2, command=martabak)
-martabak.grid(row=1, column=0, sticky=W)
+nachos = Checkbutton(snack_frame, text='Nachos', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var2, command=nachos)
+nachos.grid(row=1, column=0, sticky=W)
 
-sate = Checkbutton(makanan_frame, text='Sate', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var3, command=sate)
-sate.grid(row=2, column=0, sticky=W)
+onion = Checkbutton(snack_frame, text='Onion Ring', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var3, command=onion)
+onion.grid(row=2, column=0, sticky=W)
 
-kebab = Checkbutton(makanan_frame, text='Kebab', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var4, command=kebab)
-kebab.grid(row=3, column=0, sticky=W)
+chrispy = Checkbutton(snack_frame, text='Chrispy Chicken Ball', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var4, command=chrispy)
+chrispy.grid(row=3, column=0, sticky=W)
 
-roba = Checkbutton(makanan_frame, text='Roti Bakar', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var5, command=roba)
-roba.grid(row=4, column=0, sticky=W)
+mushroom = Checkbutton(snack_frame, text='Mushroom Chrispy', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var5, command=mushroom)
+mushroom.grid(row=4, column=0, sticky=W)
 
-naskun = Checkbutton(makanan_frame, text='Nasi Kuning', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var6, command=naskun)
-naskun.grid(row=5, column=0, sticky=W)
+frech = Checkbutton(snack_frame, text='Frech Fries Big Size', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var6, command=frech)
+frech.grid(row=5, column=0, sticky=W)
 
-nasbak = Checkbutton(makanan_frame, text='Nasi Bakar', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var7, command=nasbak)
-nasbak.grid(row=6, column=0, sticky=W)
+sandwich = Checkbutton(snack_frame, text='Sandwich 3pcs', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var7, command=sandwich)
+sandwich.grid(row=6, column=0, sticky=W)
 
-nashim = Checkbutton(makanan_frame, text='Nasi Hitam', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var8, command=nashim)
-nashim.grid(row=7, column=0, sticky=W)
+telur = Checkbutton(snack_frame, text='Telur Gulung 10pcs', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var8, command=telur)
+telur.grid(row=7, column=0, sticky=W)
 
-nasput = Checkbutton(makanan_frame, text='Nasi Putih', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var9, command=nasput)
-nasput.grid(row=8, column=0, sticky=W)
+dimsum = Checkbutton(snack_frame, text='Dimsum', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var9, command=dimsum)
+dimsum.grid(row=8, column=0, sticky=W)
 
 
 # ---------------- input jumlah makanan (mengganti variable dan text sesuai masing" menu)
 
-input_nasgor = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'),
-                     bd=7, width=6, state=DISABLED, textvariable=root_nasgor)
-input_nasgor.grid(row=0, column=1)
+input_pisgor = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+                     bd=7, width=6, state=DISABLED, textvariable=root_pisgor)
+input_pisgor.grid(row=0, column=1)
 
-input_martabak = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'),
-                       bd=7, width=6, state=DISABLED, textvariable=root_martabak)
-input_martabak.grid(row=1, column=1)
+input_nachos = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+                       bd=7, width=6, state=DISABLED, textvariable=root_nachos)
+input_nachos.grid(row=1, column=1)
 
-input_sate = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'),
-                   bd=7, width=6, state=DISABLED, textvariable=root_sate)
-input_sate.grid(row=2, column=1)
+input_onion = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+                   bd=7, width=6, state=DISABLED, textvariable=root_onion)
+input_onion.grid(row=2, column=1)
 
-input_kebab = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'),
-                    bd=7, width=6, state=DISABLED, textvariable=root_kebab)
-input_kebab.grid(row=3, column=1)
+input_chrispy = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+                    bd=7, width=6, state=DISABLED, textvariable=root_chrispy)
+input_chrispy.grid(row=3, column=1)
 
-input_roba = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'),
-                   bd=7, width=6, state=DISABLED, textvariable=root_roba)
-input_roba.grid(row=4, column=1)
+input_mushroom = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+                   bd=7, width=6, state=DISABLED, textvariable=root_mushroom)
+input_mushroom.grid(row=4, column=1)
 
-input_naskun = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'),
-                     bd=7, width=6, state=DISABLED, textvariable=root_naskun)
-input_naskun.grid(row=5, column=1)
+input_frech = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+                     bd=7, width=6, state=DISABLED, textvariable=root_frech)
+input_frech.grid(row=5, column=1)
 
-input_nasbak = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'),
-                     bd=7, width=6, state=DISABLED, textvariable=root_nasbak)
-input_nasbak.grid(row=6, column=1)
+input_sandwich = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+                     bd=7, width=6, state=DISABLED, textvariable=root_sandwich)
+input_sandwich.grid(row=6, column=1)
 
-input_nashim = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'),
-                     bd=7, width=6, state=DISABLED, textvariable=root_nashim)
-input_nashim.grid(row=7, column=1)
+input_telur = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+                     bd=7, width=6, state=DISABLED, textvariable=root_telur)
+input_telur.grid(row=7, column=1)
 
-input_nasput = Entry(makanan_frame, font=('Times New Roman', 18, 'bold'),
-                     bd=7, width=6, state=DISABLED, textvariable=root_nasput)
-input_nasput.grid(row=8, column=1)
+input_dimsum = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+                     bd=7, width=6, state=DISABLED, textvariable=root_dimsum)
+input_dimsum.grid(row=8, column=1)
 
 # ----------------------------------------------------------
 
-# Daftar MINUMAN
+# Daftar DRINK
 
 # mengganti variable dan text sesuai masing" menu
 
-fanta = Checkbutton(minuman_frame, text='Fanta', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var10, command=fanta)
-fanta.grid(row=0, column=0, sticky=W)
+lavamilk = Checkbutton(drink_frame, text='Lava Milk Shake', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var10, command=lavamilk)
+lavamilk.grid(row=0, column=0, sticky=W)
 
-cocacola = Checkbutton(minuman_frame, text='Cocacola', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var11, command=cocacola)
-cocacola.grid(row=1, column=0, sticky=W)
+milotsunami = Checkbutton(drink_frame, text='Milo Tsunami', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var11, command=milotsunami)
+milotsunami.grid(row=1, column=0, sticky=W)
 
-sprite = Checkbutton(minuman_frame, text='Sprite', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var12, command=sprite)
-sprite.grid(row=2, column=0, sticky=W)
+sodaconi = Checkbutton(drink_frame, text='Soda Coni', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var12, command=sodaconi)
+sodaconi.grid(row=2, column=0, sticky=W)
 
-jusmangga = Checkbutton(minuman_frame, text='Jus Mangga', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var13, command=jusmangga)
-jusmangga.grid(row=3, column=0, sticky=W)
+bluetea = Checkbutton(drink_frame, text='Blue Ocean Tea', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var13, command=bluetea)
+bluetea.grid(row=3, column=0, sticky=W)
 
-jusjeruk = Checkbutton(minuman_frame, text='Jus Jeruk', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var14, command=jusjeruk)
-jusjeruk.grid(row=4, column=0, sticky=W)
+blackjack = Checkbutton(drink_frame, text='Black Jack Coffe', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var14, command=blackjack)
+blackjack.grid(row=4, column=0, sticky=W)
 
-jusalpukat = Checkbutton(minuman_frame, text='Jus Alpukat', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var15, command=jusalpukat)
-jusalpukat.grid(row=5, column=0, sticky=W)
+americano = Checkbutton(drink_frame, text='Americano', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var15, command=americano)
+americano.grid(row=5, column=0, sticky=W)
 
-jusapel = Checkbutton(minuman_frame, text='Jus Apel', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var16, command=jusapel)
-jusapel.grid(row=6, column=0, sticky=W)
+iceblend = Checkbutton(drink_frame, text='Ice Blend Coffe', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var16, command=iceblend)
+iceblend.grid(row=6, column=0, sticky=W)
 
-jusdurian = Checkbutton(minuman_frame, text='Jus Durian', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var17, command=jusdurian)
-jusdurian.grid(row=7, column=0, sticky=W)
+macchiato = Checkbutton(drink_frame, text='Macchiato', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var17, command=macchiato)
+macchiato.grid(row=7, column=0, sticky=W)
 
-juspisang = Checkbutton(minuman_frame, text='Jus Pisang', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var18, command=juspisang)
-juspisang.grid(row=8, column=0, sticky=W)
+juice = Checkbutton(drink_frame, text='Juice', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var18, command=juice)
+juice.grid(row=8, column=0, sticky=W)
 
 
 # ---------------- input jumlah minuman (mengganti variable dan text sesuai masing" menu)
 
-input_fanta = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'),
-                    bd=7, width=6, state=DISABLED, textvariable=root_fanta)
-input_fanta.grid(row=0, column=1)
+input_lavamilk = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+                    bd=7, width=6, state=DISABLED, textvariable=root_lavamilk)
+input_lavamilk.grid(row=0, column=1)
 
-input_cocacola = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'),
-                       bd=7, width=6, state=DISABLED, textvariable=root_cocacola)
-input_cocacola.grid(row=1, column=1)
+input_milotsunami = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+                       bd=7, width=6, state=DISABLED, textvariable=root_milotsunami)
+input_milotsunami.grid(row=1, column=1)
 
-input_sprite = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'),
-                     bd=7, width=6, state=DISABLED, textvariable=root_sprite)
-input_sprite.grid(row=2, column=1)
+input_sodaconi = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+                     bd=7, width=6, state=DISABLED, textvariable=root_sodaconi)
+input_sodaconi.grid(row=2, column=1)
 
-input_jusmangga = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'),
-                        bd=7, width=6, state=DISABLED, textvariable=root_jusmangga)
-input_jusmangga.grid(row=3, column=1)
+input_bluetea = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+                        bd=7, width=6, state=DISABLED, textvariable=root_bluetea)
+input_bluetea.grid(row=3, column=1)
 
-input_jusjeruk = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'),
-                       bd=7, width=6, state=DISABLED, textvariable=root_jusjeruk)
-input_jusjeruk.grid(row=4, column=1)
+input_blackjack = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+                       bd=7, width=6, state=DISABLED, textvariable=root_blackjack)
+input_blackjack.grid(row=4, column=1)
 
-input_jusalpukat = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'),
-                         bd=7, width=6, state=DISABLED, textvariable=root_jusalpukat)
-input_jusalpukat.grid(row=5, column=1)
+input_americano = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+                         bd=7, width=6, state=DISABLED, textvariable=root_americano)
+input_americano.grid(row=5, column=1)
 
-input_jusapel = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'),
-                      bd=7, width=6, state=DISABLED, textvariable=root_jusapel)
-input_jusapel.grid(row=6, column=1)
+input_iceblend = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+                      bd=7, width=6, state=DISABLED, textvariable=root_iceblend)
+input_iceblend.grid(row=6, column=1)
 
-input_jusdurian = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'),
-                        bd=7, width=6, state=DISABLED, textvariable=root_jusdurian)
-input_jusdurian.grid(row=7, column=1)
+input_macchiato = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+                        bd=7, width=6, state=DISABLED, textvariable=root_macchiato)
+input_macchiato.grid(row=7, column=1)
 
-input_juspisang = Entry(minuman_frame, font=('Times New Roman', 18, 'bold'),
-                        bd=7, width=6, state=DISABLED, textvariable=root_juspisang)
-input_juspisang.grid(row=8, column=1)
+input_juice = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+                        bd=7, width=6, state=DISABLED, textvariable=root_juice)
+input_juice.grid(row=8, column=1)
 
 
-# Daftar CAKE
+# Daftar DESSERT
 
 # mengganti variable dan text sesuai masing" menu
 
-bolu = Checkbutton(cake_frame, text='Bolu Cake', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var19, command=bolu)
-bolu.grid(row=0, column=0, sticky=W)
+brownies = Checkbutton(dessert_frame, text='Brownies', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var19, command=brownies)
+brownies.grid(row=0, column=0, sticky=W)
 
-brownis = Checkbutton(cake_frame, text='Bolu Cake', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var20, command=brownis)
-brownis.grid(row=1, column=0, sticky=W)
+choco = Checkbutton(dessert_frame, text='Choco Oreo Cake', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var20, command=choco)
+choco.grid(row=1, column=0, sticky=W)
 
-lapiskukus = Checkbutton(cake_frame, text='Lapis Kukus', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var21, command=lapiskukus)
-lapiskukus.grid(row=2, column=0, sticky=W)
+cupcake = Checkbutton(dessert_frame, text='Cupcake', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var21, command=cupcake)
+cupcake.grid(row=2, column=0, sticky=W)
 
-marble = Checkbutton(cake_frame, text='Marble Cake', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var22, command=marble)
-marble.grid(row=3, column=0, sticky=W)
+pudding = Checkbutton(dessert_frame, text='Pudding', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var22, command=pudding)
+pudding.grid(row=3, column=0, sticky=W)
 
-sponge = Checkbutton(cake_frame, text='Sponge Cake', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var23, command=sponge)
-sponge.grid(row=4, column=0, sticky=W)
+paisusu = Checkbutton(dessert_frame, text='Pai Susu', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var23, command=paisusu)
+paisusu.grid(row=4, column=0, sticky=W)
 
-butter = Checkbutton(cake_frame, text='Butter Cake', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var24, command=butter)
-butter.grid(row=5, column=0, sticky=W)
+muffin = Checkbutton(dessert_frame, text='Muffin', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var24, command=muffin)
+muffin.grid(row=5, column=0, sticky=W)
 
-cotton = Checkbutton(cake_frame, text='Cotton Cake', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var25, command=cotton)
-cotton.grid(row=6, column=0, sticky=W)
+cookies = Checkbutton(dessert_frame, text='Cookies', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var25, command=cookies)
+cookies.grid(row=6, column=0, sticky=W)
 
-cheese = Checkbutton(cake_frame, text='Cheese Cake', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var26, command=cheese)
-cheese.grid(row=7, column=0, sticky=W)
+chocolava = Checkbutton(dessert_frame, text='Choco Lava', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var26, command=chocolava)
+chocolava.grid(row=7, column=0, sticky=W)
 
-mocha = Checkbutton(cake_frame, text='Mocha Cake', font=(
-    'Times New Roman', 18, 'bold'), onvalue=1, offvalue=0, variable=var27, command=mocha)
-mocha.grid(row=8, column=0, sticky=W)
+desertbox = Checkbutton(dessert_frame, text='Dessert box', font=(
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var27, command=desertbox)
+desertbox.grid(row=8, column=0, sticky=W)
 
 
 # ---------------- input jumlah cake (mengganti variable dan text sesuai masing" menu)
 
-input_bolu = Entry(cake_frame, font=('Times New Roman', 18, 'bold'),
-                   bd=7, width=6, state=DISABLED, textvariable=root_bolu)
-input_bolu.grid(row=0, column=1)
+input_brownies = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+                   bd=7, width=6, state=DISABLED, textvariable=root_brownies)
+input_brownies.grid(row=0, column=1)
 
-input_brownis = Entry(cake_frame, font=('Times New Roman', 18, 'bold'),
-                      bd=7, width=6, state=DISABLED, textvariable=root_brownis)
-input_brownis.grid(row=1, column=1)
+input_choco = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+                      bd=7, width=6, state=DISABLED, textvariable=root_choco)
+input_choco.grid(row=1, column=1)
 
-input_lapiskukus = Entry(cake_frame, font=('Times New Roman', 18, 'bold'),
-                         bd=7, width=6, state=DISABLED, textvariable=root_lapiskukus)
-input_lapiskukus.grid(row=2, column=1)
+input_cupcake = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+                         bd=7, width=6, state=DISABLED, textvariable=root_cupcake)
+input_cupcake.grid(row=2, column=1)
 
-input_marble = Entry(cake_frame, font=('Times New Roman', 18, 'bold'),
-                     bd=7, width=6, state=DISABLED, textvariable=root_marble)
-input_marble.grid(row=3, column=1)
+input_pudding = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+                     bd=7, width=6, state=DISABLED, textvariable=root_pudding)
+input_pudding.grid(row=3, column=1)
 
-input_sponge = Entry(cake_frame, font=('Times New Roman', 18, 'bold'),
-                     bd=7, width=6, state=DISABLED, textvariable=root_sponge)
-input_sponge.grid(row=4, column=1)
+input_paisusu = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+                     bd=7, width=6, state=DISABLED, textvariable=root_paisusu)
+input_paisusu.grid(row=4, column=1)
 
-input_butter = Entry(cake_frame, font=('Times New Roman', 18, 'bold'),
-                     bd=7, width=6, state=DISABLED, textvariable=root_butter)
-input_butter.grid(row=5, column=1)
+input_muffin = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+                     bd=7, width=6, state=DISABLED, textvariable=root_muffin)
+input_muffin.grid(row=5, column=1)
 
-input_cotton = Entry(cake_frame, font=('Times New Roman', 18, 'bold'),
-                     bd=7, width=6, state=DISABLED, textvariable=root_cotton)
-input_cotton.grid(row=6, column=1)
+input_cookies = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+                     bd=7, width=6, state=DISABLED, textvariable=root_cookies)
+input_cookies.grid(row=6, column=1)
 
-input_cheese = Entry(cake_frame, font=('Times New Roman', 18, 'bold'),
-                     bd=7, width=6, state=DISABLED, textvariable=root_cheese)
-input_cheese.grid(row=7, column=1)
+input_chocolava = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+                     bd=7, width=6, state=DISABLED, textvariable=root_chocolava)
+input_chocolava.grid(row=7, column=1)
 
-input_mocha = Entry(cake_frame, font=('Times New Roman', 18, 'bold'),
-                    bd=7, width=6, state=DISABLED, textvariable=root_mocha)
-input_mocha.grid(row=8, column=1)
+input_desertbox = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+                    bd=7, width=6, state=DISABLED, textvariable=root_desertbox)
+input_desertbox.grid(row=8, column=1)
 
 
 # Membuat Label Total harga makanan, minuman & cake
@@ -966,7 +936,7 @@ labelmakanan = Label(hargaframe, text='Total Harga Makanan', font=(
 labelmakanan.grid(row=0, column=0)
 
 textlabelmakanan = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
-                         bd=6, width=14, fg='black', state='readonly', textvariable=makanan_var)
+                         bd=6, width=14, fg='black', state='readonly', textvariable=snack_var)
 textlabelmakanan.grid(row=0, column=1, padx=35)
 
 # Minuman
@@ -975,7 +945,7 @@ labelminuman = Label(hargaframe, text='Total Harga Minuman', font=(
 labelminuman.grid(row=1, column=0)
 
 textlabelminuman = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
-                         bd=6, width=14, state='readonly', fg='black', textvariable=minuman_var)
+                         bd=6, width=14, state='readonly', fg='black', textvariable=drink_var)
 textlabelminuman.grid(row=1, column=1, padx=35)
 
 # Cake
@@ -984,7 +954,7 @@ labelcake = Label(hargaframe, text='Total Harga Cake', font=(
 labelcake.grid(row=2, column=0, sticky=W)
 
 textlabelcake = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
-                      bd=6, width=14, fg='black', state='readonly', textvariable=cake_var)
+                      bd=6, width=14, fg='black', state='readonly', textvariable=dessert_var)
 textlabelcake.grid(row=2, column=1, padx=35)
 
 
@@ -1082,67 +1052,67 @@ kalkulatorfield = Entry(calculatorframe, font=(
 kalkulatorfield.grid(row=0, column=0, columnspan=10)
 
 
-tombol1 = Button(calculatorframe, text='1', font=('Times New Roman', 15, 'bold'),
+tombol1 = Button(calculatorframe, text='1', font=('Times New Roman', 16, 'bold'),
                  bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('1'))
 tombol1.grid(row=1, column=0)
 
-tombol2 = Button(calculatorframe, text='2', font=('Times New Roman', 15, 'bold'),
+tombol2 = Button(calculatorframe, text='2', font=('Times New Roman', 16, 'bold'),
                  bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('2'))
 tombol2.grid(row=1, column=1)
 
-tombol3 = Button(calculatorframe, text='3', font=('Times New Roman', 15, 'bold'),
+tombol3 = Button(calculatorframe, text='3', font=('Times New Roman', 16, 'bold'),
                  bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('3'))
 tombol3.grid(row=1, column=2)
 
-tombolplus = Button(calculatorframe, text='+', font=('Times New Roman', 15, 'bold'),
+tombolplus = Button(calculatorframe, text='+', font=('Times New Roman', 16, 'bold'),
                     bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('+'))
 tombolplus.grid(row=1, column=3)
 
-tombol6 = Button(calculatorframe, text='6', font=('Times New Roman', 15, 'bold'),
+tombol6 = Button(calculatorframe, text='6', font=('Times New Roman', 16, 'bold'),
                  bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('6'))
 tombol6.grid(row=2, column=0)
 
-tombol5 = Button(calculatorframe, text='5', font=('Times New Roman', 15, 'bold'),
+tombol5 = Button(calculatorframe, text='5', font=('Times New Roman', 16, 'bold'),
                  bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('5'))
 tombol5.grid(row=2, column=1)
 
-tombol4 = Button(calculatorframe, text='4', font=('Times New Roman', 15, 'bold'),
+tombol4 = Button(calculatorframe, text='4', font=('Times New Roman', 16, 'bold'),
                  bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('4'))
 tombol4.grid(row=2, column=2)
 
-tombolminus = Button(calculatorframe, text='-', font=('Times New Roman', 15, 'bold'),
+tombolminus = Button(calculatorframe, text='-', font=('Times New Roman', 16, 'bold'),
                      bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('-'))
 tombolminus.grid(row=2, column=3)
 
-tombol7 = Button(calculatorframe, text='7', font=('Times New Roman', 15, 'bold'),
+tombol7 = Button(calculatorframe, text='7', font=('Times New Roman', 16, 'bold'),
                  bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('7'))
 tombol7.grid(row=3, column=0)
 
-tombol8 = Button(calculatorframe, text='8', font=('Times New Roman', 15, 'bold'),
+tombol8 = Button(calculatorframe, text='8', font=('Times New Roman', 16, 'bold'),
                  bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('8'))
 tombol8.grid(row=3, column=1)
 
-tombol9 = Button(calculatorframe, text='9', font=('Times New Roman', 15, 'bold'),
+tombol9 = Button(calculatorframe, text='9', font=('Times New Roman', 16, 'bold'),
                  bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('9'))
 tombol9.grid(row=3, column=2)
 
-tombolkali = Button(calculatorframe, text='*', font=('Times New Roman', 15, 'bold'),
+tombolkali = Button(calculatorframe, text='*', font=('Times New Roman', 16, 'bold'),
                     bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('*'))
 tombolkali.grid(row=3, column=3)
 
 tombolhasil = Button(calculatorframe, text='=', font=(
-    'Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=5, command=hasil)
+    'Times New Roman', 16, 'bold'), bg='grey', fg='white', bd=6, width=5, command=hasil)
 tombolhasil.grid(row=4, column=0)
 
-tombol0 = Button(calculatorframe, text='0', font=('Times New Roman', 15, 'bold'),
+tombol0 = Button(calculatorframe, text='0', font=('Times New Roman', 16, 'bold'),
                  bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('0'))
 tombol0.grid(row=4, column=1)
 
 tombolclear = Button(calculatorframe, text='Clear', font=(
-    'Times New Roman', 15, 'bold'), bg='grey', fg='white', bd=6, width=5, command=clear)
+    'Times New Roman', 16, 'bold'), bg='grey', fg='white', bd=6, width=5, command=clear)
 tombolclear.grid(row=4, column=2)
 
-tombolbagi = Button(calculatorframe, text='/', font=('Times New Roman', 15, 'bold'),
+tombolbagi = Button(calculatorframe, text='/', font=('Times New Roman', 16, 'bold'),
                     bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('/'))
 tombolbagi.grid(row=4, column=3)
 
