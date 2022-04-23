@@ -515,49 +515,49 @@ a = Tk()
 # Pemberian Title/Judul pada Project
 window_name = a.title('Cashier Management System')
 
-window_size = a.geometry('1350x690+100+55')  # Set ukuran window  (diubah) (
+window_size = a.geometry('1350x690+100+55')  # Set ukuran window  (diubah) 
 
 size_tetap = a.resizable(0, 0)
 
-window_color = a.config(bg='red')  # Set warna windows (diubah)
+window_color = a.config(bg='#005D72')  # Set warna windows (diubah)
 
 
 #  Text in Window = 'CASHIER MANAGEMENT SYSTEM'
 
 # untuk background bisa (diubah)
-topframe = Frame(a, bd=11, relief=RIDGE, bg='red')
+topframe = Frame(a, bd=11, relief=RIDGE, bg='#005D72')
 topframe.pack(side=TOP)
 
 project_name = Label(topframe, text='CASHIER MANAGEMENT SYSTEM', font=(
-    'Times New Roman', 30, 'bold'), bg='blue', fg='white', width=55)  # (diubah)
+    'Freestyle Script', 30, 'bold'), bg='#2DA9C4', fg='black', width=88)  # (diubah)
 project_name.grid(row=0, column=0)
 
 # Frame
 
 
 # bisa menambahkan warna background  (bg)
-menuframe = Frame(a, bd=16, relief=RIDGE, bg='firebrick4')
+menuframe = Frame(a, bd=16, relief=RIDGE, bg='#4FDDE6')
 menuframe.pack(side=LEFT)
 
-# bisa menambahkan warna background  (bg)
-hargaframe = Frame(menuframe, relief=RIDGE, bg='firebrick4', pady=22, bd=9, padx=62)
+
+hargaframe = Frame(menuframe, relief=RIDGE, bg='#52C8E1', pady=22, bd=9, padx=32)
 hargaframe.pack(side=BOTTOM)
 
 snack_frame = LabelFrame(menuframe, text='SNACK', font=(
-    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black')
+    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black', bg='#7CFBFF')
 snack_frame.pack(side=LEFT)
 
 drink_frame = LabelFrame(menuframe, text='DRINK', font=(
-    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black')
+    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black', bg='#7CFBFF')
 drink_frame.pack(side=LEFT)
 
 dessert_frame = LabelFrame(menuframe, text='DESSERT', font=(
-    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black')
+    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black', bg='#7CFBFF')
 dessert_frame.pack(side=LEFT)
 
 
 # ------------
-rightframe = Frame(a, bd=10, relief=RIDGE, bg='red4', pady=2)
+rightframe = Frame(a, bd=10, relief=RIDGE, bg='#2DA9C4', pady=2)
 rightframe.pack(side=RIGHT)
 
 # Fitur bagian kanan
@@ -565,10 +565,10 @@ rightframe.pack(side=RIGHT)
 calculatorframe = Frame(rightframe, bd=1, relief=RIDGE, bg='grey')
 calculatorframe.pack()
 
-strukframe = Frame(rightframe, bd=4, relief=RIDGE, bg='red4')
+strukframe = Frame(rightframe, bd=4, relief=RIDGE, bg='#4FDDE6')
 strukframe.pack()
 
-tombolframe = Frame(rightframe, bd=3, relief=RIDGE, bg='red4')
+tombolframe = Frame(rightframe, bd=3, relief=RIDGE, bg='#4FDDE6')
 tombolframe.pack()
 
 # VARIABEL yang menghubungkan dengan daftar makanan
@@ -692,39 +692,39 @@ total_var = StringVar()
 
 
 pisgor = Checkbutton(snack_frame, text='Pisgor Elite', font=('Times New Roman', 16, 'bold'),
-             onvalue=1, offvalue=0, variable=var1, command=pisgor)  
+             onvalue=1, offvalue=0, variable=var1, command=pisgor, bg='#7CFBFF')  
 pisgor.grid(row=0, column=0, sticky=W)
 
 nachos = Checkbutton(snack_frame, text='Nachos', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var2, command=nachos)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var2, command=nachos, bg='#7CFBFF')
 nachos.grid(row=1, column=0, sticky=W)
 
 onion = Checkbutton(snack_frame, text='Onion Ring', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var3, command=onion)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var3, command=onion, bg='#7CFBFF')
 onion.grid(row=2, column=0, sticky=W)
 
 chrispy = Checkbutton(snack_frame, text='Chrispy Chicken Ball', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var4, command=chrispy)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var4, command=chrispy, bg='#7CFBFF')
 chrispy.grid(row=3, column=0, sticky=W)
 
 mushroom = Checkbutton(snack_frame, text='Mushroom Chrispy', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var5, command=mushroom)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var5, command=mushroom, bg='#7CFBFF')
 mushroom.grid(row=4, column=0, sticky=W)
 
 frech = Checkbutton(snack_frame, text='Frech Fries Big Size', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var6, command=frech)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var6, command=frech, bg='#7CFBFF')
 frech.grid(row=5, column=0, sticky=W)
 
 sandwich = Checkbutton(snack_frame, text='Sandwich 3pcs', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var7, command=sandwich)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var7, command=sandwich, bg='#7CFBFF')
 sandwich.grid(row=6, column=0, sticky=W)
 
 telur = Checkbutton(snack_frame, text='Telur Gulung 10pcs', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var8, command=telur)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var8, command=telur, bg='#7CFBFF')
 telur.grid(row=7, column=0, sticky=W)
 
 dimsum = Checkbutton(snack_frame, text='Dimsum', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var9, command=dimsum)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var9, command=dimsum, bg='#7CFBFF')
 dimsum.grid(row=8, column=0, sticky=W)
 
 
@@ -773,39 +773,39 @@ input_dimsum.grid(row=8, column=1)
 # mengganti variable dan text sesuai masing" menu
 
 lavamilk = Checkbutton(drink_frame, text='Lava Milk Shake', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var10, command=lavamilk)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var10, command=lavamilk, bg='#7CFBFF')
 lavamilk.grid(row=0, column=0, sticky=W)
 
 milotsunami = Checkbutton(drink_frame, text='Milo Tsunami', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var11, command=milotsunami)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var11, command=milotsunami, bg='#7CFBFF')
 milotsunami.grid(row=1, column=0, sticky=W)
 
 sodaconi = Checkbutton(drink_frame, text='Soda Coni', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var12, command=sodaconi)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var12, command=sodaconi, bg='#7CFBFF')
 sodaconi.grid(row=2, column=0, sticky=W)
 
 bluetea = Checkbutton(drink_frame, text='Blue Ocean Tea', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var13, command=bluetea)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var13, command=bluetea, bg='#7CFBFF')
 bluetea.grid(row=3, column=0, sticky=W)
 
 blackjack = Checkbutton(drink_frame, text='Black Jack Coffe', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var14, command=blackjack)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var14, command=blackjack, bg='#7CFBFF')
 blackjack.grid(row=4, column=0, sticky=W)
 
 americano = Checkbutton(drink_frame, text='Americano', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var15, command=americano)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var15, command=americano, bg='#7CFBFF')
 americano.grid(row=5, column=0, sticky=W)
 
 iceblend = Checkbutton(drink_frame, text='Ice Blend Coffe', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var16, command=iceblend)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var16, command=iceblend, bg='#7CFBFF')
 iceblend.grid(row=6, column=0, sticky=W)
 
 macchiato = Checkbutton(drink_frame, text='Macchiato', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var17, command=macchiato)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var17, command=macchiato, bg='#7CFBFF')
 macchiato.grid(row=7, column=0, sticky=W)
 
 juice = Checkbutton(drink_frame, text='Juice', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var18, command=juice)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var18, command=juice, bg='#7CFBFF')
 juice.grid(row=8, column=0, sticky=W)
 
 
@@ -853,39 +853,39 @@ input_juice.grid(row=8, column=1)
 # mengganti variable dan text sesuai masing" menu
 
 brownies = Checkbutton(dessert_frame, text='Brownies', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var19, command=brownies)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var19, command=brownies, bg='#7CFBFF')
 brownies.grid(row=0, column=0, sticky=W)
 
 choco = Checkbutton(dessert_frame, text='Choco Oreo Cake', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var20, command=choco)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var20, command=choco, bg='#7CFBFF')
 choco.grid(row=1, column=0, sticky=W)
 
 cupcake = Checkbutton(dessert_frame, text='Cupcake', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var21, command=cupcake)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var21, command=cupcake, bg='#7CFBFF')
 cupcake.grid(row=2, column=0, sticky=W)
 
 pudding = Checkbutton(dessert_frame, text='Pudding', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var22, command=pudding)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var22, command=pudding, bg='#7CFBFF')
 pudding.grid(row=3, column=0, sticky=W)
 
 paisusu = Checkbutton(dessert_frame, text='Pai Susu', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var23, command=paisusu)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var23, command=paisusu, bg='#7CFBFF')
 paisusu.grid(row=4, column=0, sticky=W)
 
 muffin = Checkbutton(dessert_frame, text='Muffin', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var24, command=muffin)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var24, command=muffin, bg='#7CFBFF')
 muffin.grid(row=5, column=0, sticky=W)
 
 cookies = Checkbutton(dessert_frame, text='Cookies', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var25, command=cookies)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var25, command=cookies, bg='#7CFBFF')
 cookies.grid(row=6, column=0, sticky=W)
 
 chocolava = Checkbutton(dessert_frame, text='Choco Lava', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var26, command=chocolava)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var26, command=chocolava, bg='#7CFBFF')
 chocolava.grid(row=7, column=0, sticky=W)
 
 desertbox = Checkbutton(dessert_frame, text='Dessert box', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var27, command=desertbox)
+    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var27, command=desertbox, bg='#7CFBFF')
 desertbox.grid(row=8, column=0, sticky=W)
 
 
@@ -932,7 +932,7 @@ input_desertbox.grid(row=8, column=1)
 
 # Makanan
 labelmakanan = Label(hargaframe, text='Total Harga Makanan', font=(
-    'Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
 labelmakanan.grid(row=0, column=0)
 
 textlabelmakanan = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
@@ -941,7 +941,7 @@ textlabelmakanan.grid(row=0, column=1, padx=35)
 
 # Minuman
 labelminuman = Label(hargaframe, text='Total Harga Minuman', font=(
-    'Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
 labelminuman.grid(row=1, column=0)
 
 textlabelminuman = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
@@ -950,7 +950,7 @@ textlabelminuman.grid(row=1, column=1, padx=35)
 
 # Cake
 labelcake = Label(hargaframe, text='Total Harga Cake', font=(
-    'Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
 labelcake.grid(row=2, column=0, sticky=W)
 
 textlabelcake = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
@@ -961,7 +961,7 @@ textlabelcake.grid(row=2, column=1, padx=35)
 # Sub total
 # Sub total itu gabungan harga makanan, minuman & cake
 labelsubtotal = Label(hargaframe, text='Sub Total', font=(
-    'Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
 labelsubtotal.grid(row=0, column=2)
 
 textsubtotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
@@ -970,7 +970,7 @@ textsubtotal.grid(row=0, column=3, padx=35)
 
 # Pajak
 labelpajak = Label(hargaframe, text='Pajak', font=(
-    'Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
 labelpajak.grid(row=1, column=2, sticky=W)
 
 textpajak = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
@@ -980,7 +980,7 @@ textpajak.grid(row=1, column=3, padx=35)
 # Total
 # Total berbeda dengan subtotal karena subtotal tidak termasuk pajak
 labeltotal = Label(hargaframe, text='Total', font=(
-    'Times New Roman', 16, 'bold'), bg='firebrick4', fg='white')
+    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
 labeltotal.grid(row=2, column=2, sticky=W)
 
 texttotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
@@ -998,15 +998,15 @@ texttotal.grid(row=2, column=3, padx=35)
 # Keterangan = menggunakan variabel tombolframe untuk membuat sebuah tombol
 
 tombol_total = Button(tombolframe, text='Total', font=(
-    'Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=29, command=totalharga)
+    'Times New Roman', 14, 'bold'), bg='#0DA8B2', fg='white', bd=3, padx=28, command=totalharga)
 tombol_total.grid(row=0, column=0)
 
 tombol_struk = Button(tombolframe, text='Struk', font=(
-    'Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=29, command=struk)
+    'Times New Roman', 14, 'bold'), bg='#0DA8B2', fg='white', bd=3, padx=28, command=struk)
 tombol_struk.grid(row=0, column=1)
 
 tombol_reset = Button(tombolframe, text='Reset', font=(
-    'Times New Roman', 14, 'bold'), bg='firebrick4', fg='white', bd=3, padx=29, command=reset)
+    'Times New Roman', 14, 'bold'), bg='#0DA8B2', fg='white', bd=3, padx=28, command=reset)
 tombol_reset.grid(row=0, column=2)
 
 
@@ -1049,19 +1049,19 @@ def hasil():  # Function untuk menghitung hasil dari kalkulator
 
 kalkulatorfield = Entry(calculatorframe, font=(
     'Times New Roman', 16, 'bold'), width=40)
-kalkulatorfield.grid(row=0, column=0, columnspan=10)
+kalkulatorfield.grid(row=0, column=0, columnspan=40)
 
 
 tombol1 = Button(calculatorframe, text='1', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('1'))
+                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('1'))
 tombol1.grid(row=1, column=0)
 
 tombol2 = Button(calculatorframe, text='2', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('2'))
+                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('2'))
 tombol2.grid(row=1, column=1)
 
 tombol3 = Button(calculatorframe, text='3', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('3'))
+                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('3'))
 tombol3.grid(row=1, column=2)
 
 tombolplus = Button(calculatorframe, text='+', font=('Times New Roman', 16, 'bold'),
@@ -1069,15 +1069,15 @@ tombolplus = Button(calculatorframe, text='+', font=('Times New Roman', 16, 'bol
 tombolplus.grid(row=1, column=3)
 
 tombol6 = Button(calculatorframe, text='6', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('6'))
+                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('6'))
 tombol6.grid(row=2, column=0)
 
 tombol5 = Button(calculatorframe, text='5', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('5'))
+                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('5'))
 tombol5.grid(row=2, column=1)
 
 tombol4 = Button(calculatorframe, text='4', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('4'))
+                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('4'))
 tombol4.grid(row=2, column=2)
 
 tombolminus = Button(calculatorframe, text='-', font=('Times New Roman', 16, 'bold'),
@@ -1085,15 +1085,15 @@ tombolminus = Button(calculatorframe, text='-', font=('Times New Roman', 16, 'bo
 tombolminus.grid(row=2, column=3)
 
 tombol7 = Button(calculatorframe, text='7', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('7'))
+                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('7'))
 tombol7.grid(row=3, column=0)
 
 tombol8 = Button(calculatorframe, text='8', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('8'))
+                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('8'))
 tombol8.grid(row=3, column=1)
 
 tombol9 = Button(calculatorframe, text='9', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('9'))
+                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('9'))
 tombol9.grid(row=3, column=2)
 
 tombolkali = Button(calculatorframe, text='*', font=('Times New Roman', 16, 'bold'),
@@ -1101,15 +1101,15 @@ tombolkali = Button(calculatorframe, text='*', font=('Times New Roman', 16, 'bol
 tombolkali.grid(row=3, column=3)
 
 tombolhasil = Button(calculatorframe, text='=', font=(
-    'Times New Roman', 16, 'bold'), bg='grey', fg='white', bd=6, width=5, command=hasil)
+    'Times New Roman', 16, 'bold'), bg='grey', fg='white', bd=6, width=6, command=hasil)
 tombolhasil.grid(row=4, column=0)
 
 tombol0 = Button(calculatorframe, text='0', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('0'))
+                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('0'))
 tombol0.grid(row=4, column=1)
 
 tombolclear = Button(calculatorframe, text='Clear', font=(
-    'Times New Roman', 16, 'bold'), bg='grey', fg='white', bd=6, width=5, command=clear)
+    'Times New Roman', 16, 'bold'), bg='grey', fg='white', bd=6, width=6, command=clear)
 tombolclear.grid(row=4, column=2)
 
 tombolbagi = Button(calculatorframe, text='/', font=('Times New Roman', 16, 'bold'),
@@ -1119,3 +1119,4 @@ tombolbagi.grid(row=4, column=3)
 # ---------------------------------------------------------------------------------------------
 
 mainloop()
+
