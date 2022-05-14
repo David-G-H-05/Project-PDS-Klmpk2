@@ -2,6 +2,7 @@ from tkinter import *
 import random
 import time
 
+
 def reset(): 
     text_struk.delete(1.0, END)
 #     # SNACK   (Revisi ganti menunya, untuk root_ = dibiarin saja)
@@ -22,7 +23,7 @@ def reset():
     root_milotsunami.set('-')
     root_sodaconi.set('-')
     root_bluetea.set('-')
-    root_blackjack.set('-')
+    root_whitejack.set('-')
     root_americano.set('-')
     root_iceblend.set('-')
     root_macchiato.set('-')
@@ -56,7 +57,7 @@ def reset():
     input_milotsunami.config(state=DISABLED)
     input_sodaconi.config(state=DISABLED)
     input_bluetea.config(state=DISABLED)
-    input_blackjack.config(state=DISABLED)
+    input_whitejack.config(state=DISABLED)
     input_americano.config(state=DISABLED)
     input_iceblend.config(state=DISABLED)
     input_macchiato.config(state=DISABLED)
@@ -119,8 +120,8 @@ def struk():
         tanggal = time.strftime("%d/%m/%Y")  # Memasukkan bagian tanggal
         jam = time.strftime("%H:%M:%S")  # memasukkan bagian waktu
         text_struk.insert(END, "Cafe Indah Jaya \n")
-        text_struk.insert(END,tanggal + "\t\t\t         " + jam + '\n')    # jika menggunakan /t maka jarak pisahnya terlalu jauh
-        text_struk.insert(END, "---------------------------------------------------------------\n")
+        text_struk.insert(END,tanggal + "\t\t\t        " + jam + '\n')    # jika menggunakan /t maka jarak pisahnya terlalu jauh
+        text_struk.insert(END, "----------------------------------------------------------\n")
         text_struk.insert(END, "  Menu: \t\t" + "\tHarga (Rp)\n\n")
         if root_pisgor.get() != "-":
             text_struk.insert(END, f"  Pigor Elite:\t\t\t {int(root_pisgor.get())*19000} \n\n")
@@ -149,8 +150,8 @@ def struk():
             text_struk.insert(END, f"  Soda Coni:\t\t\t {int(root_sodaconi.get())*17000} \n\n")
         if root_bluetea.get() != "-":
             text_struk.insert(END, f"  Blue Ocean Tea:\t\t\t {int(root_bluetea.get())*19000} \n\n")
-        if root_blackjack.get() != "-":
-            text_struk.insert(END, f"  Black Jack Coffe:\t\t\t {int(root_blackjack.get())*20000} \n\n")
+        if root_whitejack.get() != "-":
+            text_struk.insert(END, f"  white Jack Coffe:\t\t\t {int(root_whitejack.get())*20000} \n\n")
         if root_americano.get() != "-":
             text_struk.insert(END, f"  Americano:\t\t\t {int(root_americano.get())*20000} \n\n")
         if root_iceblend.get() != "-":
@@ -179,7 +180,7 @@ def struk():
         if root_desertbox.get() != "-":
             text_struk.insert(END, f"  Dessert Box:\t\t\t {int(root_desertbox.get())*20000} \n\n")
 
-        text_struk.insert(END, "---------------------------------------------------------------\n")
+        text_struk.insert(END, "----------------------------------------------------------\n")
         if harga_snack != "-":
             text_struk.insert(END, f"  Total Harga Snack:\t\t\tRp. {harga_snack} \n\n")
         if  harga_drink != "-":
@@ -187,7 +188,7 @@ def struk():
         if harga_dessert != "-":
             text_struk.insert(END, f"  Total Harga Dessert:\t\t\tRp. {harga_dessert} \n\n")
 
-        text_struk.insert(END, "---------------------------------------------------------------\n")
+        text_struk.insert(END, "----------------------------------------------------------\n")
 
         text_struk.insert(END, f"   Subtotal:\t\t\tRp. {int(harga_snack)+int(harga_drink)+int(harga_dessert)} \n\n")
         text_struk.insert(END, f"   Pajak:\t\t\tRp. {2000} \n\n")
@@ -214,7 +215,7 @@ def totalharga():
     item11 = int(root_milotsunami.get().replace('-', '0'))
     item12 = int(root_sodaconi.get().replace('-', '0'))
     item13 = int(root_bluetea.get().replace('-', '0'))
-    item14 = int(root_blackjack.get().replace('-', '0'))
+    item14 = int(root_whitejack.get().replace('-', '0'))
     item15 = int(root_americano.get().replace('-', '0'))
     item16 = int(root_iceblend.get().replace('-', '0'))
     item17 = int(root_macchiato.get().replace('-', '0'))
@@ -374,14 +375,14 @@ def bluetea():
         input_bluetea.config(state=DISABLED)
         root_bluetea.set('-')
 
-def blackjack():
+def whitejack():
     if var14.get() == 1:
-        input_blackjack.config(state=NORMAL)
-        input_blackjack.delete(0, END)
-        input_blackjack.focus()
+        input_whitejack.config(state=NORMAL)
+        input_whitejack.delete(0, END)
+        input_whitejack.focus()
     else:
-        input_blackjack.config(state=DISABLED)
-        root_blackjack.set('-')
+        input_whitejack.config(state=DISABLED)
+        root_whitejack.set('-')
 
 def americano():
     if var15.get() == 1:
@@ -515,60 +516,60 @@ a = Tk()
 # Pemberian Title/Judul pada Project
 window_name = a.title('Cashier Management System')
 
-window_size = a.geometry('1350x690+100+55')  # Set ukuran window  (diubah) 
+window_size = a.geometry('1300x670+100+50')  # Set ukuran window  (diubah) (
 
 size_tetap = a.resizable(0, 0)
 
-window_color = a.config(bg='#005D72')  # Set warna windows (diubah)
+window_color = a.config(bg='red')  # Set warna windows (diubah)
 
 
 #  Text in Window = 'CASHIER MANAGEMENT SYSTEM'
 
 # untuk background bisa (diubah)
-topframe = Frame(a, bd=11, relief=RIDGE, bg='#005D72')
+topframe = Frame(a, bd=14, relief=RIDGE, bg='#4B4B4B')
 topframe.pack(side=TOP)
 
 project_name = Label(topframe, text='CASHIER MANAGEMENT SYSTEM', font=(
-    'Freestyle Script', 30, 'bold'), bg='#2DA9C4', fg='black', width=88)  # (diubah)
+    'PragmataPro', 30, 'bold'), bg='#4B4B4B', fg='white', width=53, bd=1 , pady=1)  # (diubah)
 project_name.grid(row=0, column=0)
 
 # Frame
 
 
 # bisa menambahkan warna background  (bg)
-menuframe = Frame(a, bd=16, relief=RIDGE, bg='#4FDDE6')
+menuframe = Frame(a, bd=13,pady=4, relief=RIDGE, bg='#4B4B4B')
 menuframe.pack(side=LEFT)
 
-
-hargaframe = Frame(menuframe, relief=RIDGE, bg='#52C8E1', pady=22, bd=9, padx=32)
+# bisa menambahkan warna background  (bg)
+hargaframe = Frame(menuframe, relief=RIDGE, bg='#4B4B4B', bd=10,padx=35, pady=12)
 hargaframe.pack(side=BOTTOM)
 
-snack_frame = LabelFrame(menuframe, text='SNACK', font=(
-    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black', bg='#7CFBFF')
-snack_frame.pack(side=LEFT)
+makanan_frame = LabelFrame(menuframe, text='SNACK', font=(
+    'Times New Roman', 20, 'bold'), bd=15,pady=6,relief=RIDGE, fg='white', bg='#4B4B4B')
+makanan_frame.pack(side=LEFT)
 
-drink_frame = LabelFrame(menuframe, text='DRINK', font=(
-    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black', bg='#7CFBFF')
-drink_frame.pack(side=LEFT)
+minuman_frame = LabelFrame(menuframe, text='DRINK', font=(
+    'Times New Roman', 20, 'bold'), bd=15,pady=6 ,relief=RIDGE, fg='white', bg='#4B4B4B')
+minuman_frame.pack(side=LEFT)
 
-dessert_frame = LabelFrame(menuframe, text='DESSERT', font=(
-    'Times New Roman', 20, 'bold'), bd=16, relief=RIDGE, fg='black', bg='#7CFBFF')
-dessert_frame.pack(side=LEFT)
+cake_frame = LabelFrame(menuframe, text='DESSERT', font=(
+    'Times New Roman', 20, 'bold'), bd=15 ,pady=8, relief=RIDGE, fg='white', bg='#4B4B4B')
+cake_frame.pack(side=LEFT)
 
 
 # ------------
-rightframe = Frame(a, bd=10, relief=RIDGE, bg='#2DA9C4', pady=2)
+rightframe = Frame(a, bd=10, relief=RIDGE, bg='#4B4B4B', )
 rightframe.pack(side=RIGHT)
 
 # Fitur bagian kanan
 
-calculatorframe = Frame(rightframe, bd=1, relief=RIDGE, bg='grey')
+calculatorframe = Frame(rightframe, bd=1, relief=RIDGE, bg='#4B4B4B')
 calculatorframe.pack()
 
-strukframe = Frame(rightframe, bd=4, relief=RIDGE, bg='#4FDDE6')
+strukframe = Frame(rightframe, bd=7, relief=RIDGE, bg='#4B4B4B')
 strukframe.pack()
 
-tombolframe = Frame(rightframe, bd=3, relief=RIDGE, bg='#4FDDE6')
+tombolframe = Frame(rightframe, bd=2, relief=RIDGE, bg='#4B4B4B')
 tombolframe.pack()
 
 # VARIABEL yang menghubungkan dengan daftar makanan
@@ -619,7 +620,7 @@ root_lavamilk = StringVar()
 root_milotsunami = StringVar()
 root_sodaconi = StringVar()
 root_bluetea = StringVar()
-root_blackjack = StringVar()
+root_whitejack = StringVar()
 root_americano = StringVar()
 root_iceblend = StringVar()
 root_macchiato = StringVar()
@@ -658,7 +659,7 @@ root_lavamilk.set('-')
 root_milotsunami.set('-')
 root_sodaconi.set('-')
 root_bluetea.set('-')
-root_blackjack.set('-')
+root_whitejack.set('-')
 root_americano.set('-')
 root_iceblend.set('-')
 root_macchiato.set('-')
@@ -688,280 +689,282 @@ total_var = StringVar()
 
 # ---------------------------------------------
 
-# Daftar SNACK
+# Daftar MAKANAN
+# sticky digunakan untuk meluruskan daftar makanan/minuman
 
+# mengganti variable dan text sesuai masing" menu
 
-pisgor = Checkbutton(snack_frame, text='Pisgor Elite', font=('Times New Roman', 16, 'bold'),
-             onvalue=1, offvalue=0, variable=var1, command=pisgor, bg='#7CFBFF')  
+pisgor = Checkbutton(makanan_frame, text='Pisgor Elite', font=('Deja Vu Sans Mono', 14),
+                     onvalue=1, offvalue=0, variable=var1, bg='#4B4B4B', command=pisgor, fg='white')  
 pisgor.grid(row=0, column=0, sticky=W)
 
-nachos = Checkbutton(snack_frame, text='Nachos', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var2, command=nachos, bg='#7CFBFF')
+nachos = Checkbutton(makanan_frame, text='Nachos', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var2, bg='#4B4B4B', command=nachos, fg='white')
 nachos.grid(row=1, column=0, sticky=W)
 
-onion = Checkbutton(snack_frame, text='Onion Ring', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var3, command=onion, bg='#7CFBFF')
+onion = Checkbutton(makanan_frame, text='Onion Ring', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var3, bg='#4B4B4B', command=onion, fg='white')
 onion.grid(row=2, column=0, sticky=W)
 
-chrispy = Checkbutton(snack_frame, text='Chrispy Chicken Ball', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var4, command=chrispy, bg='#7CFBFF')
+chrispy = Checkbutton(makanan_frame, text='Chrispy Chiken Ball', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var4, bg='#4B4B4B', command=chrispy, fg='white')
 chrispy.grid(row=3, column=0, sticky=W)
 
-mushroom = Checkbutton(snack_frame, text='Mushroom Chrispy', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var5, command=mushroom, bg='#7CFBFF')
+mushroom = Checkbutton(makanan_frame, text='Mushroom Chrispy', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var5, bg='#4B4B4B', command=mushroom, fg='white')
 mushroom.grid(row=4, column=0, sticky=W)
 
-frech = Checkbutton(snack_frame, text='Frech Fries Big Size', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var6, command=frech, bg='#7CFBFF')
-frech.grid(row=5, column=0, sticky=W)
+french = Checkbutton(makanan_frame, text='French Fries Big Size', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var6, bg='#4B4B4B', command=frech, fg='white')
+french.grid(row=5, column=0, sticky=W)
 
-sandwich = Checkbutton(snack_frame, text='Sandwich 3pcs', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var7, command=sandwich, bg='#7CFBFF')
+sandwich = Checkbutton(makanan_frame, text='Sandwich 3pcs', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var7, bg='#4B4B4B', command=sandwich, fg='white')
 sandwich.grid(row=6, column=0, sticky=W)
 
-telur = Checkbutton(snack_frame, text='Telur Gulung 10pcs', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var8, command=telur, bg='#7CFBFF')
+telur = Checkbutton(makanan_frame, text='Telur Gulung 10pcs', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var8, bg='#4B4B4B', command=telur, fg='white')
 telur.grid(row=7, column=0, sticky=W)
 
-dimsum = Checkbutton(snack_frame, text='Dimsum', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var9, command=dimsum, bg='#7CFBFF')
+dimsum = Checkbutton(makanan_frame, text='Dimsum', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var9, bg='#4B4B4B', command=dimsum, fg='white')
 dimsum.grid(row=8, column=0, sticky=W)
 
 
 # ---------------- input jumlah makanan (mengganti variable dan text sesuai masing" menu)
 
-input_pisgor = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+input_pisgor = Entry(makanan_frame, font=('Times New Roman', 14, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_pisgor)
 input_pisgor.grid(row=0, column=1)
 
-input_nachos = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+input_nachos = Entry(makanan_frame, font=('Times New Roman', 14, 'bold'),
                        bd=7, width=6, state=DISABLED, textvariable=root_nachos)
 input_nachos.grid(row=1, column=1)
 
-input_onion = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+input_onion = Entry(makanan_frame, font=('Times New Roman', 14, 'bold'),
                    bd=7, width=6, state=DISABLED, textvariable=root_onion)
 input_onion.grid(row=2, column=1)
 
-input_chrispy = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+input_chrispy = Entry(makanan_frame, font=('Times New Roman', 14, 'bold'),
                     bd=7, width=6, state=DISABLED, textvariable=root_chrispy)
 input_chrispy.grid(row=3, column=1)
 
-input_mushroom = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+input_mushroom = Entry(makanan_frame, font=('Times New Roman', 14, 'bold'),
                    bd=7, width=6, state=DISABLED, textvariable=root_mushroom)
 input_mushroom.grid(row=4, column=1)
 
-input_frech = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+input_frech = Entry(makanan_frame, font=('Times New Roman', 14, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_frech)
 input_frech.grid(row=5, column=1)
 
-input_sandwich = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+input_sandwich = Entry(makanan_frame, font=('Times New Roman', 14, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_sandwich)
 input_sandwich.grid(row=6, column=1)
 
-input_telur = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+input_telur = Entry(makanan_frame, font=('Times New Roman', 14, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_telur)
 input_telur.grid(row=7, column=1)
 
-input_dimsum = Entry(snack_frame, font=('Times New Roman', 16, 'bold'),
+input_dimsum = Entry(makanan_frame, font=('Times New Roman', 14, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_dimsum)
 input_dimsum.grid(row=8, column=1)
 
 # ----------------------------------------------------------
 
-# Daftar DRINK
+# Daftar MINUMAN
 
 # mengganti variable dan text sesuai masing" menu
 
-lavamilk = Checkbutton(drink_frame, text='Lava Milk Shake', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var10, command=lavamilk, bg='#7CFBFF')
+lavamilk = Checkbutton(minuman_frame, text='Lava Milk Shake', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var10, bg='#4B4B4B', command=lavamilk, fg='white')
 lavamilk.grid(row=0, column=0, sticky=W)
 
-milotsunami = Checkbutton(drink_frame, text='Milo Tsunami', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var11, command=milotsunami, bg='#7CFBFF')
+milotsunami = Checkbutton(minuman_frame, text='Milo Tsunami', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var11, bg='#4B4B4B', command=milotsunami, fg='white')
 milotsunami.grid(row=1, column=0, sticky=W)
 
-sodaconi = Checkbutton(drink_frame, text='Soda Coni', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var12, command=sodaconi, bg='#7CFBFF')
+sodaconi = Checkbutton(minuman_frame, text='Soda Coni', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var12, bg='#4B4B4B', command=sodaconi, fg='white')
 sodaconi.grid(row=2, column=0, sticky=W)
 
-bluetea = Checkbutton(drink_frame, text='Blue Ocean Tea', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var13, command=bluetea, bg='#7CFBFF')
+bluetea = Checkbutton(minuman_frame, text='Blue Ocean Tea', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var13, bg='#4B4B4B', command=bluetea, fg='white')
 bluetea.grid(row=3, column=0, sticky=W)
 
-blackjack = Checkbutton(drink_frame, text='Black Jack Coffe', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var14, command=blackjack, bg='#7CFBFF')
-blackjack.grid(row=4, column=0, sticky=W)
+whitejack = Checkbutton(minuman_frame, text='white Jack Coffe', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var14, bg='#4B4B4B', command=whitejack, fg='white')
+whitejack.grid(row=4, column=0, sticky=W)
 
-americano = Checkbutton(drink_frame, text='Americano', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var15, command=americano, bg='#7CFBFF')
+americano = Checkbutton(minuman_frame, text='Americano', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var15, bg='#4B4B4B', command=americano, fg='white')
 americano.grid(row=5, column=0, sticky=W)
 
-iceblend = Checkbutton(drink_frame, text='Ice Blend Coffe', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var16, command=iceblend, bg='#7CFBFF')
+iceblend = Checkbutton(minuman_frame, text='Ice Blend Coffe', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var16, bg='#4B4B4B', command=iceblend, fg='white')
 iceblend.grid(row=6, column=0, sticky=W)
 
-macchiato = Checkbutton(drink_frame, text='Macchiato', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var17, command=macchiato, bg='#7CFBFF')
+macchiato = Checkbutton(minuman_frame, text='Macchiato', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var17, bg='#4B4B4B', command=macchiato, fg='white')
 macchiato.grid(row=7, column=0, sticky=W)
 
-juice = Checkbutton(drink_frame, text='Juice', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var18, command=juice, bg='#7CFBFF')
+juice = Checkbutton(minuman_frame, text='Juice', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var18, bg='#4B4B4B', command=juice, fg='white')
 juice.grid(row=8, column=0, sticky=W)
 
 
 # ---------------- input jumlah minuman (mengganti variable dan text sesuai masing" menu)
 
-input_lavamilk = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+input_lavamilk = Entry(minuman_frame, font=('Times New Roman', 14, 'bold'),
                     bd=7, width=6, state=DISABLED, textvariable=root_lavamilk)
 input_lavamilk.grid(row=0, column=1)
 
-input_milotsunami = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+input_milotsunami= Entry(minuman_frame, font=('Times New Roman', 14, 'bold'),
                        bd=7, width=6, state=DISABLED, textvariable=root_milotsunami)
 input_milotsunami.grid(row=1, column=1)
 
-input_sodaconi = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+input_sodaconi = Entry(minuman_frame, font=('Times New Roman', 14, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_sodaconi)
 input_sodaconi.grid(row=2, column=1)
 
-input_bluetea = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+input_bluetea = Entry(minuman_frame, font=('Times New Roman', 14, 'bold'),
                         bd=7, width=6, state=DISABLED, textvariable=root_bluetea)
 input_bluetea.grid(row=3, column=1)
 
-input_blackjack = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
-                       bd=7, width=6, state=DISABLED, textvariable=root_blackjack)
-input_blackjack.grid(row=4, column=1)
+input_whitejack = Entry(minuman_frame, font=('Times New Roman', 14, 'bold'),
+                       bd=7, width=6, state=DISABLED, textvariable=root_whitejack)
+input_whitejack.grid(row=4, column=1)
 
-input_americano = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+input_americano = Entry(minuman_frame, font=('Times New Roman', 14, 'bold'),
                          bd=7, width=6, state=DISABLED, textvariable=root_americano)
 input_americano.grid(row=5, column=1)
 
-input_iceblend = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+input_iceblend = Entry(minuman_frame, font=('Times New Roman', 14, 'bold'),
                       bd=7, width=6, state=DISABLED, textvariable=root_iceblend)
 input_iceblend.grid(row=6, column=1)
 
-input_macchiato = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+input_macchiato = Entry(minuman_frame, font=('Times New Roman', 14, 'bold'),
                         bd=7, width=6, state=DISABLED, textvariable=root_macchiato)
 input_macchiato.grid(row=7, column=1)
 
-input_juice = Entry(drink_frame, font=('Times New Roman', 16, 'bold'),
+input_juice = Entry(minuman_frame, font=('Times New Roman', 14, 'bold'),
                         bd=7, width=6, state=DISABLED, textvariable=root_juice)
 input_juice.grid(row=8, column=1)
 
 
-# Daftar DESSERT
+# Daftar CAKE
 
 # mengganti variable dan text sesuai masing" menu
 
-brownies = Checkbutton(dessert_frame, text='Brownies', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var19, command=brownies, bg='#7CFBFF')
+brownies = Checkbutton(cake_frame, text='Brownies', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var19, bg='#4B4B4B', command=brownies, fg='white')
 brownies.grid(row=0, column=0, sticky=W)
 
-choco = Checkbutton(dessert_frame, text='Choco Oreo Cake', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var20, command=choco, bg='#7CFBFF')
+choco = Checkbutton(cake_frame, text='Choco Oreo Cake', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var20, bg='#4B4B4B', command=choco, fg='white')
 choco.grid(row=1, column=0, sticky=W)
 
-cupcake = Checkbutton(dessert_frame, text='Cupcake', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var21, command=cupcake, bg='#7CFBFF')
+cupcake = Checkbutton(cake_frame, text='Cupcake', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var21, bg='#4B4B4B', command=cupcake, fg='white')
 cupcake.grid(row=2, column=0, sticky=W)
 
-pudding = Checkbutton(dessert_frame, text='Pudding', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var22, command=pudding, bg='#7CFBFF')
+pudding = Checkbutton(cake_frame, text='Pudding', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var22, bg='#4B4B4B', command=pudding, fg='white')
 pudding.grid(row=3, column=0, sticky=W)
 
-paisusu = Checkbutton(dessert_frame, text='Pai Susu', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var23, command=paisusu, bg='#7CFBFF')
+paisusu= Checkbutton(cake_frame, text='Pai Susu ', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var23, bg='#4B4B4B', command=paisusu, fg='white')
 paisusu.grid(row=4, column=0, sticky=W)
 
-muffin = Checkbutton(dessert_frame, text='Muffin', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var24, command=muffin, bg='#7CFBFF')
+muffin = Checkbutton(cake_frame, text='Muffin', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var24, bg='#4B4B4B', command=muffin, fg='white')
 muffin.grid(row=5, column=0, sticky=W)
 
-cookies = Checkbutton(dessert_frame, text='Cookies', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var25, command=cookies, bg='#7CFBFF')
+cookies= Checkbutton(cake_frame, text='Cookies', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var25, bg='#4B4B4B', command=cookies, fg='white')
 cookies.grid(row=6, column=0, sticky=W)
 
-chocolava = Checkbutton(dessert_frame, text='Choco Lava', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var26, command=chocolava, bg='#7CFBFF')
+chocolava = Checkbutton(cake_frame, text='Choco Lava', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var26, bg='#4B4B4B', command=chocolava, fg='white')
 chocolava.grid(row=7, column=0, sticky=W)
 
-desertbox = Checkbutton(dessert_frame, text='Dessert box', font=(
-    'Times New Roman', 16, 'bold'), onvalue=1, offvalue=0, variable=var27, command=desertbox, bg='#7CFBFF')
+desertbox = Checkbutton(cake_frame, text='Dessert Box', font=(
+    'Deja Vu Sans Mono', 14), onvalue=1, offvalue=0, variable=var27, bg='#4B4B4B', command=desertbox, fg='white')
 desertbox.grid(row=8, column=0, sticky=W)
 
 
 # ---------------- input jumlah cake (mengganti variable dan text sesuai masing" menu)
 
-input_brownies = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+input_brownies = Entry(cake_frame, font=('Times New Roman', 14, 'bold'),
                    bd=7, width=6, state=DISABLED, textvariable=root_brownies)
 input_brownies.grid(row=0, column=1)
 
-input_choco = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+input_choco = Entry(cake_frame, font=('Times New Roman', 14, 'bold'),
                       bd=7, width=6, state=DISABLED, textvariable=root_choco)
 input_choco.grid(row=1, column=1)
 
-input_cupcake = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+input_cupcake = Entry(cake_frame, font=('Times New Roman', 14, 'bold'),
                          bd=7, width=6, state=DISABLED, textvariable=root_cupcake)
 input_cupcake.grid(row=2, column=1)
 
-input_pudding = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+input_pudding = Entry(cake_frame, font=('Times New Roman', 14, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_pudding)
 input_pudding.grid(row=3, column=1)
 
-input_paisusu = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+input_paisusu = Entry(cake_frame, font=('Times New Roman', 14, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_paisusu)
 input_paisusu.grid(row=4, column=1)
 
-input_muffin = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+input_muffin = Entry(cake_frame, font=('Times New Roman', 14, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_muffin)
 input_muffin.grid(row=5, column=1)
 
-input_cookies = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+input_cookies = Entry(cake_frame, font=('Times New Roman', 14, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_cookies)
 input_cookies.grid(row=6, column=1)
 
-input_chocolava = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+input_chocolava = Entry(cake_frame, font=('Times New Roman', 14, 'bold'),
                      bd=7, width=6, state=DISABLED, textvariable=root_chocolava)
 input_chocolava.grid(row=7, column=1)
 
-input_desertbox = Entry(dessert_frame, font=('Times New Roman', 16, 'bold'),
+input_desertbox = Entry(cake_frame, font=('Times New Roman', 14, 'bold'),
                     bd=7, width=6, state=DISABLED, textvariable=root_desertbox)
 input_desertbox.grid(row=8, column=1)
 
 
-# Membuat Label Total harga makanan, minuman & cake
+# Membuat Label Total Harga Snack, Drink, dan Dessert
 
-# Makanan
-labelmakanan = Label(hargaframe, text='Total Harga Makanan', font=(
-    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
-labelmakanan.grid(row=0, column=0)
+# Snack
+labelsnack = Label(hargaframe, text='Total Harga Snack', font=(
+    'Deja Vu Sans Mono', 16, 'bold'), bg='#4B4B4B', fg='white')
+labelsnack.grid(row=0, column=0)
 
-textlabelmakanan = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
+textlabelsnack = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
                          bd=6, width=14, fg='black', state='readonly', textvariable=snack_var)
-textlabelmakanan.grid(row=0, column=1, padx=35)
+textlabelsnack.grid(row=0, column=1, padx=35)
 
 # Minuman
-labelminuman = Label(hargaframe, text='Total Harga Minuman', font=(
-    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
-labelminuman.grid(row=1, column=0)
+labeldrink = Label(hargaframe, text='Total Harga Drink', font=(
+    'Deja Vu Sans Mono', 16, 'bold'), bg='#4B4B4B', fg='white')
+labeldrink.grid(row=1, column=0)
 
-textlabelminuman = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
+textlabeldrink = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
                          bd=6, width=14, state='readonly', fg='black', textvariable=drink_var)
-textlabelminuman.grid(row=1, column=1, padx=35)
+textlabeldrink.grid(row=1, column=1, padx=35)
 
 # Cake
-labelcake = Label(hargaframe, text='Total Harga Cake', font=(
-    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
-labelcake.grid(row=2, column=0, sticky=W)
+labeldessert = Label(hargaframe, text='Total Harga Cake', font=(
+    'Deja Vu Sans Mono', 16, 'bold'), bg='#4B4B4B', fg='white')
+labeldessert.grid(row=2, column=0, sticky=W)
 
-textlabelcake = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
+textlabeldessert = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
                       bd=6, width=14, fg='black', state='readonly', textvariable=dessert_var)
-textlabelcake.grid(row=2, column=1, padx=35)
+textlabeldessert.grid(row=2, column=1, padx=35)
 
 
 # Sub total
 # Sub total itu gabungan harga makanan, minuman & cake
 labelsubtotal = Label(hargaframe, text='Sub Total', font=(
-    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
+    'Deja Vu Sans Mono', 16, 'bold'), bg='#4B4B4B', fg='white')
 labelsubtotal.grid(row=0, column=2)
 
 textsubtotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
@@ -970,7 +973,7 @@ textsubtotal.grid(row=0, column=3, padx=35)
 
 # Pajak
 labelpajak = Label(hargaframe, text='Pajak', font=(
-    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
+    'Deja Vu Sans Mono', 16, 'bold'), bg='#4B4B4B', fg='white')
 labelpajak.grid(row=1, column=2, sticky=W)
 
 textpajak = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
@@ -980,7 +983,7 @@ textpajak.grid(row=1, column=3, padx=35)
 # Total
 # Total berbeda dengan subtotal karena subtotal tidak termasuk pajak
 labeltotal = Label(hargaframe, text='Total', font=(
-    'Times New Roman', 19, 'bold'), bg='#4FDDE6', fg='black')
+    'Deja Vu Sans Mono', 16, 'bold'), bg='#4B4B4B', fg='white')
 labeltotal.grid(row=2, column=2, sticky=W)
 
 texttotal = Entry(hargaframe, font=('Times Nem Roman', 16, 'bold'),
@@ -998,22 +1001,22 @@ texttotal.grid(row=2, column=3, padx=35)
 # Keterangan = menggunakan variabel tombolframe untuk membuat sebuah tombol
 
 tombol_total = Button(tombolframe, text='Total', font=(
-    'Times New Roman', 14, 'bold'), bg='#0DA8B2', fg='white', bd=3, padx=28, command=totalharga)
+    'Times New Roman', 14, 'bold'), bg='orange', fg='white', bd=3, padx=29, command=totalharga)
 tombol_total.grid(row=0, column=0)
 
 tombol_struk = Button(tombolframe, text='Struk', font=(
-    'Times New Roman', 14, 'bold'), bg='#0DA8B2', fg='white', bd=3, padx=28, command=struk)
+    'Times New Roman', 14, 'bold'), bg='orange', fg='white', bd=3, padx=29, command=struk)
 tombol_struk.grid(row=0, column=1)
 
 tombol_reset = Button(tombolframe, text='Reset', font=(
-    'Times New Roman', 14, 'bold'), bg='#0DA8B2', fg='white', bd=3, padx=28, command=reset)
+    'Times New Roman', 14, 'bold'), bg='orange', fg='white', bd=3, padx=29, command=reset)
 tombol_reset.grid(row=0, column=2)
 
 
 # Membuat Tempat untuk hasil Struk
 
 text_struk = Text(strukframe,  font=('Times New Roman', 14,
-                  'bold'), bg='white', fg='black', width=40, height=14)
+                  'bold'), bg='#4B4B4B', fg='white', width=35, height=13)
 text_struk.grid(row=0, column=0)
 
 
@@ -1048,72 +1051,72 @@ def hasil():  # Function untuk menghitung hasil dari kalkulator
 
 
 kalkulatorfield = Entry(calculatorframe, font=(
-    'Times New Roman', 16, 'bold'), width=40)
-kalkulatorfield.grid(row=0, column=0, columnspan=40)
+    'Times New Roman', 16, 'bold'), width=32)
+kalkulatorfield.grid(row=0, column=0, columnspan=10)
 
 
-tombol1 = Button(calculatorframe, text='1', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('1'))
+tombol1 = Button(calculatorframe, text='1', font=('Times New Roman', 15, 'bold'),
+                 bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('1'))
 tombol1.grid(row=1, column=0)
 
-tombol2 = Button(calculatorframe, text='2', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('2'))
+tombol2 = Button(calculatorframe, text='2', font=('Times New Roman', 15, 'bold'),
+                 bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('2'))
 tombol2.grid(row=1, column=1)
 
-tombol3 = Button(calculatorframe, text='3', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('3'))
+tombol3 = Button(calculatorframe, text='3', font=('Times New Roman', 15, 'bold'),
+                 bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('3'))
 tombol3.grid(row=1, column=2)
 
-tombolplus = Button(calculatorframe, text='+', font=('Times New Roman', 16, 'bold'),
-                    bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('+'))
+tombolplus = Button(calculatorframe, text='+', font=('Times New Roman', 15, 'bold'),
+                    bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('+'))
 tombolplus.grid(row=1, column=3)
 
-tombol6 = Button(calculatorframe, text='6', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('6'))
+tombol6 = Button(calculatorframe, text='6', font=('Times New Roman', 15, 'bold'),
+                 bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('6'))
 tombol6.grid(row=2, column=0)
 
-tombol5 = Button(calculatorframe, text='5', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('5'))
+tombol5 = Button(calculatorframe, text='5', font=('Times New Roman', 15, 'bold'),
+                 bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('5'))
 tombol5.grid(row=2, column=1)
 
-tombol4 = Button(calculatorframe, text='4', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('4'))
+tombol4 = Button(calculatorframe, text='4', font=('Times New Roman', 15, 'bold'),
+                 bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('4'))
 tombol4.grid(row=2, column=2)
 
-tombolminus = Button(calculatorframe, text='-', font=('Times New Roman', 16, 'bold'),
-                     bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('-'))
+tombolminus = Button(calculatorframe, text='-', font=('Times New Roman', 15, 'bold'),
+                     bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('-'))
 tombolminus.grid(row=2, column=3)
 
-tombol7 = Button(calculatorframe, text='7', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('7'))
+tombol7 = Button(calculatorframe, text='7', font=('Times New Roman', 15, 'bold'),
+                 bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('7'))
 tombol7.grid(row=3, column=0)
 
-tombol8 = Button(calculatorframe, text='8', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('8'))
+tombol8 = Button(calculatorframe, text='8', font=('Times New Roman', 15, 'bold'),
+                 bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('8'))
 tombol8.grid(row=3, column=1)
 
-tombol9 = Button(calculatorframe, text='9', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('9'))
+tombol9 = Button(calculatorframe, text='9', font=('Times New Roman', 15, 'bold'),
+                 bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('9'))
 tombol9.grid(row=3, column=2)
 
-tombolkali = Button(calculatorframe, text='*', font=('Times New Roman', 16, 'bold'),
-                    bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('*'))
+tombolkali = Button(calculatorframe, text='*', font=('Times New Roman', 15, 'bold'),
+                    bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('*'))
 tombolkali.grid(row=3, column=3)
 
 tombolhasil = Button(calculatorframe, text='=', font=(
-    'Times New Roman', 16, 'bold'), bg='grey', fg='white', bd=6, width=6, command=hasil)
+    'Times New Roman', 15, 'bold'), bg='orange', fg='white', bd=6, width=6, command=hasil)
 tombolhasil.grid(row=4, column=0)
 
-tombol0 = Button(calculatorframe, text='0', font=('Times New Roman', 16, 'bold'),
-                 bg='grey', fg='white', bd=6, width=6, command=lambda: tombolclick('0'))
+tombol0 = Button(calculatorframe, text='0', font=('Times New Roman', 15, 'bold'),
+                 bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('0'))
 tombol0.grid(row=4, column=1)
 
 tombolclear = Button(calculatorframe, text='Clear', font=(
-    'Times New Roman', 16, 'bold'), bg='grey', fg='white', bd=6, width=6, command=clear)
+    'Times New Roman', 15, 'bold'), bg='orange', fg='white', bd=6, width=6, command=clear)
 tombolclear.grid(row=4, column=2)
 
-tombolbagi = Button(calculatorframe, text='/', font=('Times New Roman', 16, 'bold'),
-                    bg='grey', fg='white', bd=6, width=5, command=lambda: tombolclick('/'))
+tombolbagi = Button(calculatorframe, text='/', font=('Times New Roman', 15, 'bold'),
+                    bg='orange', fg='white', bd=6, width=6, command=lambda: tombolclick('/'))
 tombolbagi.grid(row=4, column=3)
 
 # ---------------------------------------------------------------------------------------------
